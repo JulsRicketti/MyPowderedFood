@@ -1,19 +1,24 @@
 export const powderedFood = [
   {
+    // Note to self, this is the vegan steady shakes
+    // they all seem to have the same value
     id: 1,
     brand: 'Queal',
     calories: 424,
-    fat: {
-      total: 15.5,
-      saturated: 1.7
+    macronutrients: {
+
+      fat: {
+        total: 15.5,
+        saturated: 1.7
+      },
+      carbohydrates: {
+        total: 49.2,
+        sugars: 13.9
+      },
+      protein: 18.7,
+      fibre: 7.2,
+      sodium: 270
     },
-    carbohydrates: {
-      total: 49.2,
-      sugars: 13.9
-    },
-    protein: 18.7,
-    fibre: 7.2,
-    salt: 0.7,
     vitaminsAndMinerals: {
       vitaminA: {
         quantity: 152,
@@ -76,7 +81,7 @@ export const powderedFood = [
         dailyPercentage: 20
       },
       vitaminB5: {
-        quantity: 1.01,
+        quantity: -1,
         unit: 'mg',
         dailyPercentage: 20
       },
@@ -144,6 +149,163 @@ export const powderedFood = [
         quantity: 81,
         unit: 'mg',
         dailyPercentage: 20
+      },
+    }
+  },
+  {
+    // Note to self: this is just the chocolate hol food
+    id: 2,
+    brand: 'Hol Food',
+    calories: 400,
+    macronutrients: {
+      fat: {
+        total: 9,
+        saturated: 5,
+        trans: 0
+      },
+      carbohydrates: {
+        total: 44,
+        sugars: 9
+      },
+      protein: 35,
+      fibre: 5,
+      sodium: 373,
+    },
+    vitaminsAndMinerals: {
+      vitaminA: {
+        quantity: -1, // TODO
+        unit: 'μg',
+        dailyPercentage: 29
+      },
+      vitaminD: {
+        quantity: 3.03,
+        unit: 'μg',
+        dailyPercentage: 20
+      },
+      vitaminE: {
+        quantity: 2.63,
+        unit: 'μg',
+        dailyPercentage: 20
+      },
+      vitaminK: {
+        quantity: 0,
+        unit: 'μg',
+        dailyPercentage: 0
+      },
+      vitaminC: {
+        quantity: 22.2,
+        unit: 'mg',
+        dailyPercentage: 20
+      },
+      thiamine: {
+        quantity: -1, // TODO
+        unit: 'mg',
+        dailyPercentage: 25
+      },
+      riboflavine: {
+        quantity: -1, // TODO
+        unit: 'mg',
+        dailyPercentage: 27
+      },
+      niacine: {
+        quantity: -1, // TODO
+        unit: 'mg',
+        dailyPercentage: 28
+      },
+      vitaminB6: {
+        quantity: -1, // TODO
+        unit: 'mg',
+        dailyPercentage: 24
+      },
+      folicAcid: {
+        quantity: 51,
+        unit: 'μg',
+        dailyPercentage: 20
+      },
+      vitaminB12: {
+        quantity: 0.81,
+        unit: 'μg',
+        dailyPercentage: 20
+      },
+      biotine: {
+        quantity: 0.025,
+        unit: 'mg',
+        dailyPercentage: -1 // TODO
+      },
+      vitaminB5: { // Also called Pantothetic Acid
+        quantity: -1, // TODO
+        unit: 'mg',
+        dailyPercentage: 25
+      },
+      potassium: {
+        quantity: 940,
+        unit: 'mg',
+        dailyPercentage: -1 // TODO
+      },
+      chloride: {
+        quantity: 0.46,
+        unit: 'g',
+        dailyPercentage: 20
+      },
+      calcium: {
+        quantity: -1, // TODO
+        unit: 'g',
+        dailyPercentage: 22
+      },
+      phosphorus: {
+        quantity: -1, // TODO
+        unit: 'mg',
+        dailyPercentage: 22
+      },
+      magnesium: {
+        quantity: 71,
+        unit: 'mg',
+        dailyPercentage: 20
+      },
+      iron: {
+        quantity: -1, // TODO
+        unit: 'mg',
+        dailyPercentage: 27
+      },
+      zinc: {
+        quantity: -1, // TODO
+        unit: 'mg',
+        dailyPercentage: 27
+      },
+      copper: {
+        quantity: 0.5,
+        unit: 'mg',
+        dailyPercentage: -1 // 0.3 === 20%
+      },
+      manganese: {
+        quantity: 1,
+        unit: 'mg',
+        dailyPercentage: -1 // 1.6 === 54
+      },
+      selenium: {
+        quantity: 0.011,
+        unit: 'mg',
+        dailyPercentage: -1 // TODO
+      },
+      molybdenum: {
+        quantity: 0.02,
+        unit: 'mg',
+        dailyPercentage: -1 // TODO
+      },
+      iodine: {
+        quantity: -1, // TODO
+        unit: 'μg',
+        dailyPercentage: 27
+      },
+      choline: {
+        quantity: 81,
+        unit: 'mg',
+        dailyPercentage: 20
+      },
+      chromium: {
+        quantity: 0.01,
+        unit: 'mg',
+        dailyPercentage: -1 // TODO
       },
     }
   }
