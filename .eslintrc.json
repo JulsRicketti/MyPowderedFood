@@ -1,0 +1,199 @@
+{
+  "root": true,
+  "env": {
+      "browser": true,
+      "es6": true,
+      "node": true,
+      "jest": true
+  },
+  "extends": [
+      "standard",
+      "eslint:recommended",
+      "plugin:react/recommended"
+  ],
+  "globals": {
+      "Atomics": "readonly",
+      "SharedArrayBuffer": "readonly"
+  },
+  "parserOptions": {
+      "ecmaFeatures": {
+          "jsx": true
+      },
+      "ecmaVersion": 2018,
+      "sourceType": "module"
+  },
+  "rules": {
+    // Possible Errors
+    "for-direction": "error",
+    "getter-return": "error",
+    "no-async-promise-executor": "error",
+    "no-await-in-loop": "off",
+    "no-compare-neg-zero": "error",
+    "no-cond-assign": "error",
+    "no-console": "off",
+    "no-constant-condition": "error",
+    "no-control-regex": "error",
+    "no-debugger": "error",
+    "no-dupe-args": "error",
+    "no-dupe-else-if": "error",
+    "no-dupe-keys": "error",
+    "no-duplicate-case": "error",
+    "no-empty": "error",
+    "no-empty-character-class": "error",
+    "no-ex-assign": "error",
+    "no-extra-boolean-cast": "error",
+    "no-extra-parens": "error",
+    "no-extra-semi": "error",
+    "no-func-assign": "error",
+    "no-import-assign": "error",
+    "no-inner-declarations": ["error", "both"],
+    "no-invalid-regexp": "error",
+    "no-irregular-whitespace": "error",
+    "no-misleading-character-class": "error",
+    "no-obj-calls": "error",
+    "no-prototype-builtins": "error",
+    "no-regex-spaces": "error",
+    "no-setter-return": "error",
+    "no-sparse-arrays": "error",
+    "no-template-curly-in-string": "error",
+    "no-unexpected-multiline": "error",
+    "no-unreachable": "error",
+    "no-unsafe-finally": "error",
+    "no-unsafe-negation": "error",
+    "require-atomic-updates": "off",
+    "use-isnan": "error",
+    "valid-typeof": "error",
+
+    // Best Practices
+    "accessor-pairs": "error",
+    "array-callback-return": "error",
+    "block-scoped-var": "error",
+    "class-methods-use-this": "off",
+    "complexity": ["error", 25],
+    "curly": "error",
+    "default-param-last": "error",
+    "dot-location": ["error", "property"],
+    "dot-notation": "error",
+    "eqeqeq": "error",
+    "grouped-accessor-pairs": ["error", "getBeforeSet"],
+    "guard-for-in": "error",
+    "max-classes-per-file": ["error", 1],
+    "no-alert": "error",
+    "no-caller": "error",
+    "no-case-declarations": "error",
+    "no-constructor-return": "error",
+    "no-div-regex": "off",
+    "no-else-return": "off",
+    "no-empty-function": "off",
+    "no-empty-pattern": "error",
+    "no-eq-null": "error",
+    "no-eval": "error",
+    "no-extend-native": "error",
+    "no-extra-bind": "error",
+    "no-extra-label": "error",
+    "no-fallthrough": "error",
+    "no-floating-decimal": "error",
+    "no-global-assign": "error",
+    "no-implicit-coercion": ["error",{"allow":["!!"]}],
+    "no-implicit-globals": "off",
+    "no-implied-eval": "error",
+    "no-invalid-this": "off",
+    "no-iterator": "error",
+    "no-labels": "error",
+    "no-lone-blocks": "error",
+    "no-loop-func": "error",
+    "no-magic-numbers": "off",
+    "no-multi-spaces": "error",
+    "no-multi-str": "error",
+    "no-new": "off",
+    "no-new-func": "error",
+    "no-new-wrappers": "error",
+    "no-octal": "error",
+    "no-octal-escape": "error",
+    "no-param-reassign": "off",
+    "no-proto": "error",
+    "no-redeclare": ["error", {"builtinGlobals": true}],
+    "no-restricted-properties": "off",
+    "no-return-assign": ["error", "always"],
+    "no-return-await": "error",
+    "no-script-url": "error",
+    "no-self-assign": "error",
+    "no-self-compare": "error",
+    "no-sequences": "error",
+    "no-throw-literal": "error",
+    "no-unmodified-loop-condition": "error",
+    "no-unused-expressions": "error",
+    "no-unused-labels": "error",
+    "no-useless-call": "error",
+    "no-useless-catch": "error",
+    "no-useless-concat": "error",
+    "no-useless-escape": "error",
+    "no-useless-return": "error",
+    "no-void": "error",
+    "no-warning-comments": "off",
+    "no-with": "error",
+    "prefer-named-capture-group": "off",
+    "prefer-promise-reject-errors": "error",
+    "prefer-regex-literals": "error",
+    "radix": "error",
+    "require-await": "error",
+    "require-unicode-regexp": "warn",
+    "vars-on-top": "error",
+    "wrap-iife": "error",
+    "yoda": "error",
+
+    // Strict Mode
+    "strict": ["error", "safe"],
+
+    // Variables
+    "init-declarations": "error",
+    "no-delete-var": "error",
+    "no-label-var": "error",
+    "no-restricted-globals": "off",
+    "no-shadow": "off",
+    "no-shadow-restricted-names": "error",
+    "no-undef": "error",
+    "no-undef-init": "error",
+    "no-undefined": "off",
+    "no-unused-vars": "error",
+    "no-use-before-define": "error",
+
+    // Node.js and CommonJS
+    "callback-return": "off",
+    "global-require": "off",
+    "handle-callback-err": ["error", "^(err|error)$"],
+    "no-buffer-constructor": "error",
+    "no-mixed-requires": "error",
+    "no-new-require": "error",
+    "no-path-concat": "off",
+    "no-process-exit": "off",
+    "no-restricted-modules": "off",
+    "no-sync": "off"
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "overrides": [
+    {
+      "files": [
+        "**/*.test.js"
+      ],
+      "env": {
+        "jest": true // now **/*.test.js files' env has both es6 *and* jest
+      },
+      // Can't extend in overrides: https://github.com/eslint/eslint/issues/8813
+      // "extends": ["plugin:jest/recommended"]
+      "plugins": ["jest"],
+      "rules": {
+        "jest/no-disabled-tests": "warn",
+        "jest/no-focused-tests": "error",
+        "jest/no-identical-title": "error",
+        "jest/prefer-to-have-length": "warn",
+        "jest/valid-expect": "error"
+      }
+    }
+  ]
+}
+

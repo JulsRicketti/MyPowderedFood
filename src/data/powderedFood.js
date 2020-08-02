@@ -6,7 +6,6 @@ export const powderedFood = [
     brand: 'Queal',
     calories: 424,
     macronutrients: {
-
       fat: {
         total: 15.5,
         saturated: 1.7
