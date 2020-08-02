@@ -308,5 +308,162 @@ export const powderedFood = [
         dailyPercentage: -1 // TODO
       },
     }
+  },
+  {
+    id: 3,
+    brand: 'Soylent',
+    calories: 400,
+    macronutrients: {
+      fat: {
+        total: 19,
+        saturated: 1.5,
+        trans: 0.2,
+        polysaturated: 3.5
+      },
+      carbohydrates: {
+        total: 42,
+        sugars: 16
+      },
+      protein: 20,
+      fibre: 4,
+      sodium: 320,
+    },
+    vitaminsAndMinerals: {
+      vitaminA: {
+        quantity: -1, // TODO
+        unit: 'μg',
+        dailyPercentage: 22
+      },
+      vitaminD: {
+        quantity: 3.03,
+        unit: 'μg',
+        dailyPercentage: 20
+      },
+      vitaminE: {
+        quantity: 2.63,
+        unit: 'μg',
+        dailyPercentage: 20
+      },
+      vitaminK: {
+        quantity: 0,
+        unit: 'μg',
+        dailyPercentage: 0
+      },
+      vitaminC: {
+        quantity: 22.2,
+        unit: 'mg',
+        dailyPercentage: 20
+      },
+      thiamine: {
+        quantity: -1, // TODO
+        unit: 'mg',
+        dailyPercentage: 21
+      },
+      riboflavine: {
+        quantity: -1, // TODO
+        unit: 'mg',
+        dailyPercentage: 27
+      },
+      niacine: {
+        quantity: -1, // TODO
+        unit: 'mg',
+        dailyPercentage: 19
+      },
+      vitaminB6: {
+        quantity: -1, // TODO
+        unit: 'mg',
+        dailyPercentage: 24
+      },
+      folicAcid: {
+        quantity: 51,
+        unit: 'μg',
+        dailyPercentage: 20
+      },
+      vitaminB12: {
+        quantity: 0.81,
+        unit: 'μg',
+        dailyPercentage: 20
+      },
+      biotine: {
+        quantity: 0.06,
+        unit: 'mg',
+        dailyPercentage: -1 // TODO
+      },
+      vitaminB5: { // Also called Pantothetic Acid
+        quantity: -1, // TODO
+        unit: 'mg',
+        dailyPercentage: 25
+      },
+      potassium: {
+        quantity: 950,
+        unit: 'mg',
+        dailyPercentage: -1 // TODO
+      },
+      chloride: {
+        quantity: 450,
+        unit: 'mg',
+        dailyPercentage: -1 // TODO
+      },
+      calcium: {
+        quantity: -1, // TODO
+        unit: 'g',
+        dailyPercentage: 22
+      },
+      phosphorus: {
+        quantity: -1, // TODO
+        unit: 'mg',
+        dailyPercentage: 22
+      },
+      magnesium: {
+        quantity: 71,
+        unit: 'mg',
+        dailyPercentage: 20
+      },
+      iron: {
+        quantity: -1, // TODO
+        unit: 'mg',
+        dailyPercentage: 19
+      },
+      zinc: {
+        quantity: -1, // TODO
+        unit: 'mg',
+        dailyPercentage: 20
+      },
+      copper: {
+        quantity: 0.18,
+        unit: 'mg',
+        dailyPercentage: -1 // 0.3 === 20%
+      },
+      manganese: {
+        quantity: 0.45,
+        unit: 'mg',
+        dailyPercentage: -1 // 1.6 === 54
+      },
+      selenium: {
+        quantity: 0.011,
+        unit: 'mg',
+        dailyPercentage: -1 // TODO
+      },
+      molybdenum: {
+        quantity: 0.09,
+        unit: 'mg',
+        dailyPercentage: -1 // TODO
+      },
+      iodine: {
+        quantity: -1, // TODO
+        unit: 'μg',
+        dailyPercentage: 27
+      },
+      choline: {
+        quantity: 110,
+        unit: 'mg',
+        dailyPercentage: -1 // TODO
+      },
+      chromium: {
+        quantity: 0.07,
+        unit: 'mg',
+        dailyPercentage: -1 // TODO
+      },
+    }
   }
 ]
