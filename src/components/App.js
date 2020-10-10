@@ -1,9 +1,12 @@
+import 'antd/dist/antd.css'
 import React from 'react'
+
+import Comparison from './Comparison'
 
 export default function App () {
   return (
-    <div>
-      TODO: App
+    <div style={{ margin: 30 }}>
+      <Comparison/>
     </div>
   )
 }
