@@ -1,14 +1,29 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Card, Divider } from 'antd'
+import { CheckCircleOutlined } from '@ant-design/icons'
+import { dietaryRestrictions } from '../data/dietaryRestrictions'
 import convertToProperUnit from '../util/convertToProperUnit'
+import alphabeticalSort from '../util/alphabeticalSort'
 
 export default function NutritionInformation ({ food = {}, vitaminsAndMineralsUnit = 'mg' }) {
-  const { macronutrients, vitaminsAndMinerals } = food
+  const { accomodatedRestrictions, macronutrients, vitaminsAndMinerals } = food
   return (
     <>
-      <Card title={food.brand} style={{ width: 300 }}>
+      <Card title={food.brand} style={{ width: 500 }}>
         <strong>Calories: {food.calories}</strong>
+      </Card>
+      <Card style={{ height: 300 }}>
+        <h3>Accomodated  Dietary Restrictions</h3>
+        {accomodatedRestrictions
+          .sort(alphabeticalSort)
+          .map((restriction) => {
+            return (
+              <p key={restriction}>
+                <CheckCircleOutlined style={{ color: 'green' }}/> {dietaryRestrictions[restriction].name}
+              </p>
+            )
+          })}
       </Card>
       <Card>
         <h3>Macronutrients</h3>

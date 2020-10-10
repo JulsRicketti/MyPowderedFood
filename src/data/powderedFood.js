@@ -5,6 +5,9 @@ export const powderedFood = [
     id: 1,
     brand: 'Queal',
     calories: 424,
+    accomodatedRestrictions: [
+      'vegan', 'lactoseIntolerance', 'nutFree', 'glutenFree', 'kosher', 'halal'
+    ],
     macronutrients: {
       fat: {
         total: 15.5,
@@ -188,6 +191,9 @@ export const powderedFood = [
     id: 2,
     brand: 'Hol Food',
     calories: 400,
+    accomodatedRestrictions: [
+      'nutFree', 'glutenFree'
+    ],
     macronutrients: {
       fat: {
         total: 9,
@@ -371,6 +377,9 @@ export const powderedFood = [
     id: 3,
     brand: 'Soylent',
     calories: 400,
+    accomodatedRestrictions: [
+      'vegan', 'lactoseIntolerance', 'nutFree', 'glutenFree', 'kosher', 'halal'
+    ],
     macronutrients: {
       fat: {
         total: 19,
