@@ -8,9 +8,11 @@ import alphabeticalSort from '../util/alphabeticalSort'
 
 export default function NutritionInformation ({ food = {}, vitaminsAndMineralsUnit = 'mg' }) {
   const { accomodatedRestrictions, macronutrients, vitaminsAndMinerals } = food
+  const vitaminsAndMineralsArray = Object.keys(vitaminsAndMinerals)
+
   return (
     <>
-      <Card title={food.brand} style={{ width: 500 }}>
+      <Card type='inner' title={food.brand} style={{ width: 500 }}>
         <strong>Calories: {food.calories}</strong>
       </Card>
       <Card style={{ height: 300 }}>
@@ -58,15 +60,15 @@ export default function NutritionInformation ({ food = {}, vitaminsAndMineralsUn
       </Card>
       <Card>
         <h3>Vitamins and Minerals</h3>
-        {Object.keys(vitaminsAndMinerals).map((key) => {
+        {vitaminsAndMineralsArray.map((key, index) => {
           const { name, unit, quantity, dailyPercentage } = vitaminsAndMinerals[key]
-
+          const isLastIndex = index === (vitaminsAndMineralsArray.length - 1)
           const convertedQuantity = convertToProperUnit(vitaminsAndMineralsUnit, unit, quantity)
           return (
             <div key={key}>
               <h4>{name}:</h4>
               <div><strong>{convertedQuantity} {vitaminsAndMineralsUnit} ({dailyPercentage}%)</strong></div>
-              <Divider/>
+              {isLastIndex ? null : <Divider/>}
             </div>
           )
         })}
