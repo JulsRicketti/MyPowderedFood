@@ -174,6 +174,12 @@ export const powderedFood = [
         quantity: 81,
         unit: 'mg',
         dailyPercentage: 20
+      },
+      chromium: {
+        name: 'Chromium',
+        quantity: 0,
+        unit: 'mg',
+        dailyPercentage: 0
       }
     }
   },
@@ -276,6 +282,7 @@ export const powderedFood = [
         dailyPercentage: 25
       },
       potassium: {
+        name: 'Potassium',
         quantity: 940,
         unit: 'mg',
         dailyPercentage: -1 // TODO
@@ -459,6 +466,7 @@ export const powderedFood = [
         dailyPercentage: 25
       },
       potassium: {
+        name: 'Potassium',
         quantity: 950,
         unit: 'mg',
         dailyPercentage: -1 // TODO
