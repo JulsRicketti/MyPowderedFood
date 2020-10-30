@@ -1,37 +1,48 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Card, Divider } from 'antd'
-import { CheckCircleOutlined } from '@ant-design/icons'
-import { dietaryRestrictions } from '../data/dietaryRestrictions'
-import convertToProperUnit from '../util/convertToProperUnit'
-import alphabeticalSort from '../util/alphabeticalSort'
+import { CheckCircleOutlined, CloseCircleOutlined } from '@ant-design/icons'
+import { dietaryRestrictions } from '../data'
+import { alphabeticalSort, convertToProperUnit } from '../util'
 
-export default function ProductInformation ({ food = {}, vitaminsAndMineralsUnit = 'mg' }) {
+export default function ProductInformation ({ food = {}, vitaminsAndMineralsUnit = 'mg', selectedDietaryRestrictions }) {
   const { accomodatedRestrictions, macronutrients, vitaminsAndMinerals, priceAndServings } = food
   const vitaminsAndMineralsArray = Object.keys(vitaminsAndMinerals)
 
+  const sharedStyle = {
+  }
+
+  const accomadatedRestrictionsComponent = selectedDietaryRestrictions && selectedDietaryRestrictions.length ? (
+    <Card style={{ height: 100 + (30 * selectedDietaryRestrictions.length), ...sharedStyle }}>
+      <h3>Accomodated  Dietary Restrictions</h3>
+      {selectedDietaryRestrictions
+        .sort(alphabeticalSort)
+        .map((restriction) => {
+          const accomadatesRestriction = accomodatedRestrictions.includes(restriction)
+          return (
+            <p key={restriction} style={{ color: accomadatesRestriction ? '' : 'red' }}>
+              {
+                accomadatesRestriction
+                  ? <CheckCircleOutlined style={{ color: 'green' }}/>
+                  : <CloseCircleOutlined style={{ color: 'red' }}/>
+              }
+              &nbsp;{dietaryRestrictions[restriction].name}
+            </p>
+          )
+        })}
+    </Card>
+  ) : null
+
   return (
     <>
-      <Card type='inner' title={food.brand} style={{ width: 500 }}>
-        <p><strong>Calories: {food.calories}</strong></p>
-        <p><strong>Full Price:</strong> CAD ${priceAndServings.fullPrice}*</p>
+      <Card type='inner' title={food.brand} style={sharedStyle}>
+        <p><strong>Calories per serving: {food.calories}</strong></p>
+        <p><strong>Full Price:</strong> CAD ${priceAndServings.fullPrice}</p>
         <p><strong>Servings:</strong> {priceAndServings.servings}</p>
-        <p><strong>Price per recommended serving:</strong> CAD ${(priceAndServings.fullPrice / food.priceAndServings.servings).toFixed(2)}*</p>
-        <p><small>* Prices do NOT include shipping fees</small></p>
+        <p><strong>Price per serving:</strong> CAD ${(priceAndServings.fullPrice / food.priceAndServings.servings).toFixed(2)}</p>
       </Card>
-      <Card style={{ height: 300 }}>
-        <h3>Accomodated  Dietary Restrictions</h3>
-        {accomodatedRestrictions
-          .sort(alphabeticalSort)
-          .map((restriction) => {
-            return (
-              <p key={restriction}>
-                <CheckCircleOutlined style={{ color: 'green' }}/> {dietaryRestrictions[restriction].name}
-              </p>
-            )
-          })}
-      </Card>
-      <Card>
+      {accomadatedRestrictionsComponent}
+      <Card style={sharedStyle}>
         <h3>Macronutrients</h3>
 
         <div>
@@ -62,7 +73,7 @@ export default function ProductInformation ({ food = {}, vitaminsAndMineralsUnit
           <h4>Sodium: {macronutrients.sodium}g</h4>
         </div>
       </Card>
-      <Card>
+      <Card style={sharedStyle}>
         <h3>Vitamins and Minerals</h3>
         {vitaminsAndMineralsArray.map((key, index) => {
           const { name, unit, quantity, dailyPercentage } = vitaminsAndMinerals[key]
@@ -83,5 +94,6 @@ export default function ProductInformation ({ food = {}, vitaminsAndMineralsUnit
 
 ProductInformation.propTypes = {
   food: PropTypes.object.isRequired,
-  vitaminsAndMineralsUnit: PropTypes.string
+  vitaminsAndMineralsUnit: PropTypes.string,
+  selectedDietaryRestrictions: PropTypes.array
 }

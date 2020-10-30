@@ -1,7 +1,7 @@
 import microgramToMiligram from './microgramToMiligram'
 import miligramToMicrogram from './miligramToMicrogram'
 
-export default function convertToProperUnit (desiredUnit, currentUnit, value) {
+export const convertToProperUnit = (desiredUnit, currentUnit, value) => {
   if (desiredUnit === currentUnit) {
     return value
   } else if (desiredUnit === 'mg') {

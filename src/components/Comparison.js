@@ -1,24 +1,39 @@
-import React from 'react'
-
-import { Row, Col } from 'antd'
+import React, { useState } from 'react'
+import { Row, Col, Alert } from 'antd'
+import { powderedFood } from '../data'
 import ProductInformation from './ProductInformation'
-import { powderedFood } from '../data/powderedFood'
+import Parameters from './Parameters'
 
 export default function Comparison () {
+  const [selectedDietaryRestrictions, setSelectedDietaryRestrictions] = useState([])
+
   return (
     <>
-      {/* <Select
-        mode='multiple'
-        onChange={() => console.warn('todo')}
-      >
-        {powderedFood.map(pf => (
-          <Select.Option key={pf.id}>{pf.brand}</Select.Option>
-        ))}
-      </Select> */}
       <Row>
+        <Parameters
+          setSelectedDietaryRestrictions={setSelectedDietaryRestrictions}
+        />
+      </Row>
+      <Row>
+        {localStorage && localStorage.getItem('hideAlert')
+          ? null
+          : (
+            <Alert
+              message='Prices do not include shipping fees or taxes.'
+              type='warning'
+              showIcon
+              closable
+              onClose={() => localStorage.setItem('hideAlert', true)}
+            />)
+        }
+      </Row>
+      <Row style={{ marginTop: 10 }}>
         {powderedFood.map(food => (
-          <Col key={food.id} style={{ margin: 5 }}>
-            <ProductInformation food={food}/>
+          <Col key={food.id} style={{ marginRight: 5 }} >
+            <ProductInformation
+              food={food}
+              selectedDietaryRestrictions={selectedDietaryRestrictions}
+            />
           </Col>
         ))}
       </Row>

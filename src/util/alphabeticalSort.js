@@ -1,4 +1,4 @@
-export default function (a, b, property = 'label') {
+export const alphabeticalSort = (a, b, property = 'label') => {
   let x = null
   let y = null
   if (typeof a !== 'object') {
