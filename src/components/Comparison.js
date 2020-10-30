@@ -6,12 +6,14 @@ import Parameters from './Parameters'
 
 export default function Comparison () {
   const [selectedDietaryRestrictions, setSelectedDietaryRestrictions] = useState([])
+  const [selectedPriority, setSelectedPriority] = useState([])
 
   return (
     <>
       <Row>
         <Parameters
           setSelectedDietaryRestrictions={setSelectedDietaryRestrictions}
+          setSelectedPriority={setSelectedPriority}
         />
       </Row>
       <Row>
@@ -33,6 +35,7 @@ export default function Comparison () {
             <ProductInformation
               food={food}
               selectedDietaryRestrictions={selectedDietaryRestrictions}
+              selectedPriority={selectedPriority}
             />
           </Col>
         ))}

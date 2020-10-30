@@ -1,11 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Col, Select } from 'antd'
-import { dietaryRestrictions } from '../data'
+import { dietaryRestrictions, priorities } from '../data'
 import { alphabeticalSort } from '../util'
 
-export default function Parameters ({ setSelectedDietaryRestrictions }) {
+export default function Parameters ({ setSelectedDietaryRestrictions, setSelectedPriority }) {
   const dietaryRestrictionsArray = Object.keys(dietaryRestrictions)
+  const nutritionalPrioritiesArray = Object.keys(priorities)
 
   return (
     <>
@@ -39,17 +40,18 @@ export default function Parameters ({ setSelectedDietaryRestrictions }) {
           allowClear
           placeholder='Prioritized Items'
           onChange={(value) => {
-            // setSelectedDietaryRestrictions(value)
+            console.warn('VALUE', value)
+            setSelectedPriority(value)
           }}
         >
-          {dietaryRestrictionsArray
+          {nutritionalPrioritiesArray
             .sort(alphabeticalSort)
             .map((restrictionKey) => (
               <Select.Option
                 key={restrictionKey}
                 value={restrictionKey}
               >
-                {dietaryRestrictions[restrictionKey].name}
+                {priorities[restrictionKey].name}
               </Select.Option>
             ))}
         </Select>
@@ -59,5 +61,6 @@ export default function Parameters ({ setSelectedDietaryRestrictions }) {
 }
 
 Parameters.propTypes = {
-  setSelectedDietaryRestrictions: PropTypes.func.isRequired
+  setSelectedDietaryRestrictions: PropTypes.func.isRequired,
+  setSelectedPriority: PropTypes.func.isRequired
 }

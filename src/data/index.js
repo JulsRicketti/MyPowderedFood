@@ -1,3 +1,3 @@
 export * from './dietaryRestrictions'
-export * from './nutritionalPriorities'
+export * from './priorities'
 export * from './powderedFood'
