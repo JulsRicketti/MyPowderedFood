@@ -5,6 +5,10 @@ export const powderedFood = [
     id: 1,
     brand: 'Queal',
     calories: 424,
+    priceAndServings: {
+      fullPrice: 13.23,
+      servings: 5
+    },
     accomodatedRestrictions: [
       'vegan', 'lactoseIntolerance', 'nutFree', 'glutenFree', 'kosher', 'halal'
     ],
@@ -191,6 +195,10 @@ export const powderedFood = [
     id: 2,
     brand: 'Hol Food',
     calories: 400,
+    priceAndServings: {
+      fullPrice: 93.34,
+      servings: 30
+    },
     accomodatedRestrictions: [
       'nutFree', 'glutenFree'
     ],
@@ -377,6 +385,10 @@ export const powderedFood = [
     id: 3,
     brand: 'Soylent',
     calories: 400,
+    priceAndServings: {
+      fullPrice: 88,
+      servings: 35
+    },
     accomodatedRestrictions: [
       'vegan', 'lactoseIntolerance', 'nutFree', 'glutenFree', 'kosher', 'halal'
     ],

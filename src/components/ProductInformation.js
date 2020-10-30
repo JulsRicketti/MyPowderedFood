@@ -6,14 +6,18 @@ import { dietaryRestrictions } from '../data/dietaryRestrictions'
 import convertToProperUnit from '../util/convertToProperUnit'
 import alphabeticalSort from '../util/alphabeticalSort'
 
-export default function NutritionInformation ({ food = {}, vitaminsAndMineralsUnit = 'mg' }) {
-  const { accomodatedRestrictions, macronutrients, vitaminsAndMinerals } = food
+export default function ProductInformation ({ food = {}, vitaminsAndMineralsUnit = 'mg' }) {
+  const { accomodatedRestrictions, macronutrients, vitaminsAndMinerals, priceAndServings } = food
   const vitaminsAndMineralsArray = Object.keys(vitaminsAndMinerals)
 
   return (
     <>
       <Card type='inner' title={food.brand} style={{ width: 500 }}>
-        <strong>Calories: {food.calories}</strong>
+        <p><strong>Calories: {food.calories}</strong></p>
+        <p><strong>Full Price:</strong> CAD ${priceAndServings.fullPrice}*</p>
+        <p><strong>Servings:</strong> {priceAndServings.servings}</p>
+        <p><strong>Price per recommended serving:</strong> CAD ${(priceAndServings.fullPrice / food.priceAndServings.servings).toFixed(2)}*</p>
+        <p><small>* Prices do NOT include shipping fees</small></p>
       </Card>
       <Card style={{ height: 300 }}>
         <h3>Accomodated  Dietary Restrictions</h3>
@@ -77,7 +81,7 @@ export default function NutritionInformation ({ food = {}, vitaminsAndMineralsUn
   )
 }
 
-NutritionInformation.propTypes = {
+ProductInformation.propTypes = {
   food: PropTypes.object.isRequired,
   vitaminsAndMineralsUnit: PropTypes.string
 }
