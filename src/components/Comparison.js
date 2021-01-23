@@ -24,7 +24,7 @@ export default function Comparison () {
         />
       </Row>
       <Row>
-        {localStorage && localStorage.getItem('hideAlert')
+        {sessionStorage && sessionStorage.getItem('hideAlert')
           ? null
           : (
             <Alert
@@ -33,7 +33,7 @@ export default function Comparison () {
               type='warning'
               showIcon
               closable
-              onClose={() => localStorage.setItem('hideAlert', true)}
+              onClose={() => sessionStorage.setItem('hideAlert', true)}
             />)
         }
       </Row>
@@ -44,7 +44,7 @@ export default function Comparison () {
               food={food}
               selectedDietaryRestrictions={selectedDietaryRestrictions}
               selectedPriority={selectedPriority}
-              isWinner={winner && (food.brand === winner.brand)}
+              isWinner={winner && (Array.isArray(winner) ? winner.map(w => w.brand).includes(food.brand) : food.brand === winner.brand)}
             />
           </Col>
         ))}

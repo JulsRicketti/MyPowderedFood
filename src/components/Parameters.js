@@ -10,32 +10,10 @@ export default function Parameters ({ setSelectedDietaryRestrictions, setSelecte
 
   return (
     <>
-      <Col span={12} style={{ backgroundColor: 'red' }}>
-        <div style={{ width: '100%' }}>
-          <Select
-            style={{ width: '100%' }}
-            mode='multiple'
-            allowClear
-            placeholder='Dietary Restrictions'
-            onChange={(value) => {
-              setSelectedDietaryRestrictions(value)
-            }}
-          >
-            {dietaryRestrictionsArray
-              .sort(alphabeticalSort)
-              .map((restrictionKey) => (
-                <Select.Option
-                  key={restrictionKey}
-                  value={restrictionKey}
-                >
-                  {dietaryRestrictions[restrictionKey].name}
-                </Select.Option>
-              ))}
-          </Select>
-        </div>
-      </Col>
-      <Col span={12}>
+      <Col xs={24} sm={24} lg={12}>
+        <h3>Desired Diet Type</h3>
         <Select
+          showSearch
           style={{ width: '100%' }}
           allowClear
           placeholder='Priorities'
@@ -51,6 +29,30 @@ export default function Parameters ({ setSelectedDietaryRestrictions, setSelecte
                 value={restrictionKey}
               >
                 {priorities[restrictionKey].name}
+              </Select.Option>
+            ))}
+        </Select>
+      </Col>
+      <Col xs={24} sm={24} lg={12}>
+        <h3>Dietary Restrictions</h3>
+        <Select
+          showSearch
+          style={{ width: '100%' }}
+          mode='multiple'
+          allowClear
+          placeholder='Dietary Restrictions'
+          onChange={(value) => {
+            setSelectedDietaryRestrictions(value)
+          }}
+        >
+          {dietaryRestrictionsArray
+            .sort(alphabeticalSort)
+            .map((restrictionKey) => (
+              <Select.Option
+                key={restrictionKey}
+                value={restrictionKey}
+              >
+                {dietaryRestrictions[restrictionKey].name}
               </Select.Option>
             ))}
         </Select>

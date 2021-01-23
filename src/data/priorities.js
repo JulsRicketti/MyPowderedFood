@@ -23,6 +23,34 @@ export const priorities = {
       })
     }
   },
+  lowCalories: {
+    name: 'Low Calories',
+    eval: () => {
+      return powderedFood.reduce((lowestCalories, current) => {
+        if (current.calories === lowestCalories.calories) {
+          return Array.isArray(lowestCalories)
+            ? [...lowestCalories, current]
+            : [lowestCalories, current]
+        }
+        const lc = Array.isArray(lowestCalories.calories) ? lowestCalories[0].calories : lowestCalories.calories
+        return (
+          current.calories < lc
+            ? current
+            : lowestCalories
+        )
+      })
+    }
+  },
+  highCalories: {
+    name: 'High Calories',
+    eval: () => {
+      return powderedFood.reduce((highestCalories, current) => (
+        current.calories > highestCalories.calories
+          ? current
+          : highestCalories
+      ))
+    }
+  },
   lowSugar: {
     name: 'Low Sugar',
     eval: () => {
