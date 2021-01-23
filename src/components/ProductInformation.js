@@ -5,11 +5,12 @@ import { CheckCircleOutlined, CloseCircleOutlined } from '@ant-design/icons'
 import { dietaryRestrictions } from '../data'
 import { alphabeticalSort, convertToProperUnit } from '../util'
 
-export default function ProductInformation ({ food = {}, vitaminsAndMineralsUnit = 'mg', selectedDietaryRestrictions, selectedPriority }) {
+export default function ProductInformation ({ food = {}, vitaminsAndMineralsUnit = 'mg', selectedDietaryRestrictions, isWinner }) {
   const { accomodatedRestrictions, macronutrients, vitaminsAndMinerals, priceAndServings } = food
   const vitaminsAndMineralsArray = Object.keys(vitaminsAndMinerals)
 
   const sharedStyle = {
+    backgroundColor: isWinner ? '#75bad46e' : ''
   }
 
   const accomadatedRestrictionsComponent = selectedDietaryRestrictions && selectedDietaryRestrictions.length ? (
@@ -96,5 +97,5 @@ ProductInformation.propTypes = {
   food: PropTypes.object.isRequired,
   vitaminsAndMineralsUnit: PropTypes.string,
   selectedDietaryRestrictions: PropTypes.array,
-  selectedPriority: PropTypes.string
+  isWinner: PropTypes.bool
 }

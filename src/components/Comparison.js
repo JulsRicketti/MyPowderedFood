@@ -9,7 +9,11 @@ export default function Comparison () {
   const [selectedPriority, setSelectedPriority] = useState('')
 
   const priorityObject = priorities[selectedPriority] || {}
-  console.warn('priorityObject', priorityObject)
+
+  let winner = null
+  if (typeof priorityObject.eval === 'function') {
+    winner = priorityObject.eval()
+  }
 
   return (
     <>
@@ -35,11 +39,12 @@ export default function Comparison () {
       </Row>
       <Row style={{ marginTop: 10 }}>
         {powderedFood.map(food => (
-          <Col key={food.id} style={{ marginRight: 5, backgroundColor: 'red' }} >
+          <Col key={food.id} style={{ marginRight: 5 }} >
             <ProductInformation
               food={food}
               selectedDietaryRestrictions={selectedDietaryRestrictions}
               selectedPriority={selectedPriority}
+              isWinner={winner && (food.brand === winner.brand)}
             />
           </Col>
         ))}
