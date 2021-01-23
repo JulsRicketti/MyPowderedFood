@@ -100,26 +100,26 @@ export const powderedFood = [
       },
       vitaminB5: {
         name: 'Vitamin B5',
-        quantity: -1,
+        quantity: '?',
         unit: 'mg',
         dailyPercentage: 20
       },
       potassium: {
         name: 'Potassium',
-        quantity: 0.71,
-        unit: 'g',
+        quantity: 710,
+        unit: 'mg',
         dailyPercentage: 20
       },
       chloride: {
         name: 'Chloride',
-        quantity: 0.46,
-        unit: 'g',
+        quantity: 460,
+        unit: 'mg',
         dailyPercentage: 20
       },
       calcium: {
         name: 'Calcium',
-        quantity: 0.19,
-        unit: 'g',
+        quantity: 190,
+        unit: 'mg',
         dailyPercentage: 26
       },
       phosphorus: {
@@ -219,8 +219,8 @@ export const powderedFood = [
     vitaminsAndMinerals: {
       vitaminA: {
         name: 'Vitamin A',
-        quantity: -1, // TODO
-        unit: 'μg',
+        quantity: 0.2204,
+        unit: 'mg',
         dailyPercentage: 29
       },
       vitaminD: {
@@ -249,25 +249,25 @@ export const powderedFood = [
       },
       thiamine: {
         name: 'Thiamine',
-        quantity: -1, // TODO
+        quantity: 0.293,
         unit: 'mg',
         dailyPercentage: 25
       },
       riboflavine: {
         name: 'Riboflavine',
-        quantity: -1, // TODO
+        quantity: 0.432,
         unit: 'mg',
         dailyPercentage: 27
       },
       niacine: {
         name: 'Niacine',
-        quantity: -1, // TODO
+        quantity: 4.522,
         unit: 'mg',
         dailyPercentage: 28
       },
       vitaminB6: {
         name: 'Vitamin B6',
-        quantity: -1, // TODO
+        quantity: 0.408,
         unit: 'mg',
         dailyPercentage: 24
       },
@@ -287,11 +287,11 @@ export const powderedFood = [
         name: 'Biotine',
         quantity: 0.025,
         unit: 'mg',
-        dailyPercentage: -1 // TODO
+        dailyPercentage: 62.5
       },
       vitaminB5: { // Also called Pantothetic Acid
         name: 'Vitamin B5',
-        quantity: -1, // TODO
+        quantity: '?',
         unit: 'mg',
         dailyPercentage: 25
       },
@@ -299,23 +299,23 @@ export const powderedFood = [
         name: 'Potassium',
         quantity: 940,
         unit: 'mg',
-        dailyPercentage: -1 // TODO
+        dailyPercentage: 26.47
       },
       chloride: {
         name: 'Chloride',
-        quantity: 0.46,
-        unit: 'g',
+        quantity: 460,
+        unit: 'mg',
         dailyPercentage: 20
       },
       calcium: {
         name: 'Calcium',
-        quantity: -1, // TODO
-        unit: 'g',
+        quantity: 160,
+        unit: 'mg',
         dailyPercentage: 22
       },
       phosphorus: {
         name: 'Phosphorus',
-        quantity: -1, // TODO
+        quantity: 121.61,
         unit: 'mg',
         dailyPercentage: 22
       },
@@ -327,13 +327,13 @@ export const powderedFood = [
       },
       iron: {
         name: 'Iron',
-        quantity: -1, // TODO
+        quantity: 2.997,
         unit: 'mg',
         dailyPercentage: 27
       },
       zinc: {
         name: 'Zinc',
-        quantity: -1, // TODO
+        quantity: 4.44,
         unit: 'mg',
         dailyPercentage: 27
       },
@@ -341,29 +341,29 @@ export const powderedFood = [
         name: 'Copper',
         quantity: 0.5,
         unit: 'mg',
-        dailyPercentage: -1 // 0.3 === 20%
+        dailyPercentage: 33.3
       },
       manganese: {
         name: 'Manganese',
         quantity: 1,
         unit: 'mg',
-        dailyPercentage: -1 // 1.6 === 54
+        dailyPercentage: 33
       },
       selenium: {
         name: 'Selenium',
         quantity: 0.011,
         unit: 'mg',
-        dailyPercentage: -1 // TODO
+        dailyPercentage: 15
       },
       molybdenum: {
         name: 'Molybdenum',
         quantity: 0.02,
         unit: 'mg',
-        dailyPercentage: -1 // TODO
+        dailyPercentage: 30
       },
       iodine: {
         name: 'Iodine',
-        quantity: -1, // TODO
+        quantity: 40.905,
         unit: 'μg',
         dailyPercentage: 27
       },
@@ -377,7 +377,7 @@ export const powderedFood = [
         name: 'Chromium',
         quantity: 0.01,
         unit: 'mg',
-        dailyPercentage: -1 // TODO
+        dailyPercentage: '?'
       }
     }
   },
@@ -410,8 +410,8 @@ export const powderedFood = [
     vitaminsAndMinerals: {
       vitaminA: {
         name: 'Vitamin A',
-        quantity: -1, // TODO
-        unit: 'μg',
+        quantity: 0.1672,
+        unit: 'mg',
         dailyPercentage: 22
       },
       vitaminD: {
@@ -440,25 +440,25 @@ export const powderedFood = [
       },
       thiamine: {
         name: 'Thiamine',
-        quantity: -1, // TODO
+        quantity: 0.246,
         unit: 'mg',
         dailyPercentage: 21
       },
       riboflavine: {
         name: 'Riboflavine',
-        quantity: -1, // TODO
+        quantity: 0.432,
         unit: 'mg',
         dailyPercentage: 27
       },
       niacine: {
         name: 'Niacine',
-        quantity: -1, // TODO
+        quantity: 3.06,
         unit: 'mg',
         dailyPercentage: 19
       },
       vitaminB6: {
         name: 'Vitamin B6',
-        quantity: -1, // TODO
+        quantity: 0.408,
         unit: 'mg',
         dailyPercentage: 24
       },
@@ -478,11 +478,11 @@ export const powderedFood = [
         name: 'Biotine',
         quantity: 0.06,
         unit: 'mg',
-        dailyPercentage: -1 // TODO
+        dailyPercentage: 150
       },
       vitaminB5: { // Also called Pantothetic Acid
         name: 'Vitamin B5',
-        quantity: -1, // TODO
+        quantity: '?',
         unit: 'mg',
         dailyPercentage: 25
       },
@@ -490,23 +490,23 @@ export const powderedFood = [
         name: 'Potassium',
         quantity: 950,
         unit: 'mg',
-        dailyPercentage: -1 // TODO
+        dailyPercentage: 26.76
       },
       chloride: {
         name: 'Chloride',
         quantity: 450,
         unit: 'mg',
-        dailyPercentage: -1 // TODO
+        dailyPercentage: 19.56
       },
       calcium: {
         name: 'Calcium',
-        quantity: -1, // TODO
-        unit: 'g',
+        quantity: 160,
+        unit: 'mg',
         dailyPercentage: 22
       },
       phosphorus: {
         name: 'Phosphorus',
-        quantity: -1, // TODO
+        quantity: 121.61,
         unit: 'mg',
         dailyPercentage: 22
       },
@@ -518,13 +518,13 @@ export const powderedFood = [
       },
       iron: {
         name: 'Iron',
-        quantity: -1, // TODO
+        quantity: 2.109,
         unit: 'mg',
         dailyPercentage: 19
       },
       zinc: {
         name: 'Zinc',
-        quantity: -1, // TODO
+        quantity: 3.29,
         unit: 'mg',
         dailyPercentage: 20
       },
@@ -532,29 +532,29 @@ export const powderedFood = [
         name: 'Copper',
         quantity: 0.18,
         unit: 'mg',
-        dailyPercentage: -1 // 0.3 === 20%
+        dailyPercentage: 12
       },
       manganese: {
         name: 'Manganese',
         quantity: 0.45,
         unit: 'mg',
-        dailyPercentage: -1 // 1.6 === 54
+        dailyPercentage: 15
       },
       selenium: {
         name: 'Selenium',
         quantity: 0.011,
         unit: 'mg',
-        dailyPercentage: -1 // TODO
+        dailyPercentage: 15
       },
       molybdenum: {
         name: 'Molybdenum',
         quantity: 0.09,
         unit: 'mg',
-        dailyPercentage: -1 // TODO
+        dailyPercentage: 138
       },
       iodine: {
         name: 'Iodine',
-        quantity: -1, // TODO
+        quantity: 40.905,
         unit: 'μg',
         dailyPercentage: 27
       },
@@ -562,13 +562,13 @@ export const powderedFood = [
         name: 'Choline',
         quantity: 110,
         unit: 'mg',
-        dailyPercentage: -1 // TODO
+        dailyPercentage: 27.16
       },
       chromium: {
         name: 'Chromium',
         quantity: 0.07,
         unit: 'mg',
-        dailyPercentage: -1 // TODO
+        dailyPercentage: '?'
       }
     }
   }
