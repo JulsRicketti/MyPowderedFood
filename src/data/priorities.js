@@ -84,10 +84,30 @@ export const priorities = {
     }
   },
   multiVitaminsAndMinerals: {
-    name: 'Multi Vitamins and Minerals',
+    name: 'Most Vitamins and Minerals',
     eval: () => {
-      // TODO
-      return 'WIP'
+      // Current heurestic: just calculate the absolute total
+      return powderedFood.reduce((mostVitaminsAndMinerals, current) => {
+        const currentTotalVitaminsAndMinerals = Object.keys(current.vitaminsAndMinerals).reduce((c, key) => {
+          if (typeof current.vitaminsAndMinerals[key].quantity === 'number') {
+            return c + current.vitaminsAndMinerals[key].quantity
+          } else {
+            return c
+          }
+        }, 0)
+        const mostVitaminsAndMineralsWinner = Object.keys(mostVitaminsAndMinerals.vitaminsAndMinerals).reduce((c, key) => {
+          if (typeof mostVitaminsAndMinerals.vitaminsAndMinerals[key].quantity === 'number') {
+            return c + mostVitaminsAndMinerals.vitaminsAndMinerals[key].quantity
+          } else {
+            return c
+          }
+        }, 0)
+        return (
+          currentTotalVitaminsAndMinerals > mostVitaminsAndMineralsWinner
+            ? current
+            : mostVitaminsAndMinerals
+        )
+      })
     }
 
   },
