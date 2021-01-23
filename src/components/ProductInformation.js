@@ -5,7 +5,7 @@ import { CheckCircleOutlined, CloseCircleOutlined } from '@ant-design/icons'
 import { dietaryRestrictions } from '../data'
 import { alphabeticalSort, convertToProperUnit } from '../util'
 
-export default function ProductInformation ({ food = {}, vitaminsAndMineralsUnit = 'mg', selectedDietaryRestrictions }) {
+export default function ProductInformation ({ food = {}, vitaminsAndMineralsUnit = 'mg', selectedDietaryRestrictions, selectedPriority }) {
   const { accomodatedRestrictions, macronutrients, vitaminsAndMinerals, priceAndServings } = food
   const vitaminsAndMineralsArray = Object.keys(vitaminsAndMinerals)
 
@@ -95,5 +95,6 @@ export default function ProductInformation ({ food = {}, vitaminsAndMineralsUnit
 ProductInformation.propTypes = {
   food: PropTypes.object.isRequired,
   vitaminsAndMineralsUnit: PropTypes.string,
-  selectedDietaryRestrictions: PropTypes.array
+  selectedDietaryRestrictions: PropTypes.array,
+  selectedPriority: PropTypes.string
 }

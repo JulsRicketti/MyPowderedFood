@@ -6,7 +6,7 @@ import { alphabeticalSort } from '../util'
 
 export default function Parameters ({ setSelectedDietaryRestrictions, setSelectedPriority }) {
   const dietaryRestrictionsArray = Object.keys(dietaryRestrictions)
-  const nutritionalPrioritiesArray = Object.keys(priorities)
+  const prioritiesArray = Object.keys(priorities)
 
   return (
     <>
@@ -38,13 +38,12 @@ export default function Parameters ({ setSelectedDietaryRestrictions, setSelecte
         <Select
           style={{ width: '100%' }}
           allowClear
-          placeholder='Prioritized Items'
+          placeholder='Priorities'
           onChange={(value) => {
-            console.warn('VALUE', value)
             setSelectedPriority(value)
           }}
         >
-          {nutritionalPrioritiesArray
+          {prioritiesArray
             .sort(alphabeticalSort)
             .map((restrictionKey) => (
               <Select.Option
