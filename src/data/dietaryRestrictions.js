@@ -13,11 +13,12 @@ export const dietaryRestrictions = {
   },
   diabetic: {
     name: 'Diabetic'
-  },
-  kosher: {
-    name: 'Kosher'
-  },
-  halal: {
-    name: 'Halal'
   }
+  // TODO: confirm these for each product
+  // kosher: {
+  //   name: 'Kosher'
+  // },
+  // halal: {
+  //   name: 'Halal'
+  // }
 }

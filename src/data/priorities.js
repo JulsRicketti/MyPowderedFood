@@ -75,7 +75,7 @@ export const priorities = {
     name: 'High Protein',
     eval: () => {
       return powderedFood.reduce((highestProtein, current) => (
-        current.macronutrients.fibre > highestProtein.macronutrients.fibre
+        current.macronutrients.protein > highestProtein.macronutrients.protein
           ? current
           : highestProtein
       ))
