@@ -23,6 +23,18 @@ export const priorities = {
       })
     }
   },
+  lowPricePerCalories: {
+    name: 'Lowest Price Per Calorie',
+    eval: () => {
+      return powderedFood.reduce((lowestPrice, current) => {
+        const lowestPricePerCalories = (lowestPrice.priceAndServings.fullPrice / lowestPrice.priceAndServings.servings) / lowestPrice.calories
+        const currentPricePerCalories = (current.priceAndServings.fullPrice / current.priceAndServings.servings) / current.calories
+        return currentPricePerCalories < lowestPricePerCalories
+          ? current
+          : lowestPrice
+      })
+    }
+  },
   lowCalories: {
     name: 'Low Calories',
     eval: () => {
