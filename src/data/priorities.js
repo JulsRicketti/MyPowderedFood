@@ -61,6 +61,16 @@ export const priorities = {
       ))
     }
   },
+  lowCarb: {
+    name: 'Low Carbs',
+    eval: () => {
+      return powderedFood.reduce((lowestCarbs, current) => (
+        current.macronutrients.carbohydrates.total < lowestCarbs.macronutrients.carbohydrates.total
+          ? current
+          : lowestCarbs
+      ))
+    }
+  },
   highFiber: {
     name: 'High Fiber',
     eval: () => {
