@@ -5,7 +5,7 @@ import Comparison from './Comparison'
 
 export default function App () {
   return (
-    <div style={{ margin: 30 }}>
+    <div style={{ marginTop: 30, display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
       <Comparison/>
     </div>
   )

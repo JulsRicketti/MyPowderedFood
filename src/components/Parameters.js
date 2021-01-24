@@ -11,7 +11,7 @@ export default function Parameters ({ setSelectedDietaryRestrictions, setSelecte
   return (
     <>
       <Col xs={24} sm={24} lg={12}>
-        <h3>Desired Diet Type</h3>
+        <h3>Diet Priorities</h3>
         <Select
           showSearch
           style={{ width: '100%' }}

@@ -17,12 +17,12 @@ export default function Comparison () {
 
   return (
     <>
-      <Row>
+      <div style={{ width: '50%', display: 'flex', flexDirection: 'row' }}>
         <Parameters
           setSelectedDietaryRestrictions={setSelectedDietaryRestrictions}
           setSelectedPriority={setSelectedPriority}
         />
-      </Row>
+      </div>
       <Row>
         {sessionStorage && sessionStorage.getItem('hideAlert')
           ? null
