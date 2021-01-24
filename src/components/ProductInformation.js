@@ -55,8 +55,8 @@ export default function ProductInformation ({ food = {}, vitaminsAndMineralsUnit
 
         <div>
           <h4>Carbohydrates</h4>
-          <p><strong>Total:</strong> {macronutrients.fat.total}g</p>
-          <p><strong>Sugars:</strong> {macronutrients.fat.saturated}g</p>
+          <p><strong>Total:</strong> {macronutrients.carbohydrates.total}g</p>
+          <p><strong>Sugars:</strong> {macronutrients.carbohydrates.sugars}g</p>
         </div>
 
         <Divider/>
