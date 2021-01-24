@@ -15,7 +15,7 @@ export default function ProductInformation ({ food = {}, vitaminsAndMineralsUnit
 
   const accomadatedRestrictionsComponent = selectedDietaryRestrictions && selectedDietaryRestrictions.length ? (
     <Card style={{ height: 100 + (30 * selectedDietaryRestrictions.length), ...sharedStyle }}>
-      <h3>Accomodated  Dietary Restrictions</h3>
+      <h3>Accomodated Restrictions</h3>
       {selectedDietaryRestrictions
         .sort(alphabeticalSort)
         .map((restriction) => {
