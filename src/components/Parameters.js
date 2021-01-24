@@ -8,10 +8,14 @@ export default function Parameters ({ setSelectedDietaryRestrictions, setSelecte
   const dietaryRestrictionsArray = Object.keys(dietaryRestrictions)
   const prioritiesArray = Object.keys(priorities)
 
+  const headerStyle = { display: 'flex', justifyContent: 'center' }
+
   return (
     <>
       <Col xs={24} sm={24} lg={12}>
-        <h3>Diet Priorities</h3>
+        <div style={headerStyle}>
+          <h2>Dietary Priorities</h2>
+        </div>
         <Select
           showSearch
           style={{ width: '100%' }}
@@ -34,13 +38,15 @@ export default function Parameters ({ setSelectedDietaryRestrictions, setSelecte
         </Select>
       </Col>
       <Col xs={24} sm={24} lg={12}>
-        <h3>Dietary Restrictions</h3>
+        <div style={headerStyle}>
+          <h2>Dietary Restrictions</h2>
+        </div>
         <Select
           showSearch
           style={{ width: '100%' }}
           mode='multiple'
           allowClear
-          placeholder='Dietary Restrictions'
+          placeholder='Restrictions'
           onChange={(value) => {
             setSelectedDietaryRestrictions(value)
           }}

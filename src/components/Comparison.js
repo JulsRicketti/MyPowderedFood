@@ -16,13 +16,45 @@ export default function Comparison () {
   }
 
   return (
-    <>
-      <div style={{ width: '50%', display: 'flex', flexDirection: 'row' }}>
+    <div style={{ marginBottom: '30px' }}>
+      <div style={{ display: 'flex', flexDirection: 'row' }}>
         <Parameters
           setSelectedDietaryRestrictions={setSelectedDietaryRestrictions}
           setSelectedPriority={setSelectedPriority}
         />
       </div>
+      <Row style={{ marginTop: 10 }}>
+        {powderedFood.map(food => (
+          <Col key={food.id} style={{ marginRight: 5 }} >
+            <ProductInformation
+              food={food}
+              selectedDietaryRestrictions={selectedDietaryRestrictions}
+              selectedPriority={selectedPriority}
+              isWinner={winner && (Array.isArray(winner) ? winner.map(w => w.brand).includes(food.brand) : food.brand === winner.brand)}
+            />
+          </Col>
+        ))}
+      </Row>
+      <Row>
+        {sessionStorage && sessionStorage.getItem('hideUpdatedAtAlert')
+          ? null
+          : (
+            <Alert
+              style={{ width: '100%', marginTop: 10 }}
+              message={
+                <>
+                  <p>
+                  Information last updated on January 23rd, 2021. If information is innacurate please <a href="https://www.reddit.com/message/compose/?to=monkeyMammoth4" target='_blank' rel="noopener noreferrer">contact me</a>.
+                  </p>
+                </>
+              }
+              type='info'
+              showIcon
+              closable
+              onClose={() => sessionStorage.setItem('hideUpdatedAtAlert', true)}
+            />)
+        }
+      </Row>
       <Row>
         {sessionStorage && sessionStorage.getItem('hideAlert')
           ? null
@@ -37,18 +69,6 @@ export default function Comparison () {
             />)
         }
       </Row>
-      <Row style={{ marginTop: 10 }}>
-        {powderedFood.map(food => (
-          <Col key={food.id} style={{ marginRight: 5 }} >
-            <ProductInformation
-              food={food}
-              selectedDietaryRestrictions={selectedDietaryRestrictions}
-              selectedPriority={selectedPriority}
-              isWinner={winner && (Array.isArray(winner) ? winner.map(w => w.brand).includes(food.brand) : food.brand === winner.brand)}
-            />
-          </Col>
-        ))}
-      </Row>
-    </>
+    </div>
   )
 }

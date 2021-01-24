@@ -4,6 +4,7 @@ export const powderedFood = [
     // they all seem to have the same value
     id: 1,
     brand: 'Queal',
+    site: 'https://queal.com/',
     calories: 424,
     priceAndServings: {
       fullPrice: 13.23,
@@ -194,6 +195,7 @@ export const powderedFood = [
     // Note to self: this is just the chocolate hol food
     id: 2,
     brand: 'Hol Food',
+    site: 'https://holfood.com/',
     calories: 400,
     priceAndServings: {
       fullPrice: 93.34,
@@ -384,6 +386,7 @@ export const powderedFood = [
   {
     id: 3,
     brand: 'Soylent',
+    site: 'https://www.soylent.ca/',
     calories: 400,
     priceAndServings: {
       fullPrice: 88,

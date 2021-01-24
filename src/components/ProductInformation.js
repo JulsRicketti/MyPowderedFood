@@ -42,6 +42,7 @@ export default function ProductInformation ({ food = {}, vitaminsAndMineralsUnit
         <p><strong>Servings:</strong> {priceAndServings.servings}</p>
         <p><strong>Price per serving:</strong> CAD ${(priceAndServings.fullPrice / food.priceAndServings.servings).toFixed(2)}</p>
         <p><strong>Price per calorie:</strong> CAD ${((priceAndServings.fullPrice / food.priceAndServings.servings) / food.calories).toFixed(5)}</p>
+        <p><strong>Website:</strong> <a href={food.site} target='_blank' rel="noopener noreferrer">{food.site}</a></p>
       </Card>
       {accomadatedRestrictionsComponent}
       <Card style={sharedStyle}>
