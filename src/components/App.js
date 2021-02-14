@@ -1,6 +1,5 @@
 import 'antd/dist/antd.css'
-import React, { useState, useEffect, useContext } from 'react'
-import getExchangeRate from '../api/getExchangeRate'
+import React, { useContext } from 'react'
 
 import { CurrencyContext } from '../context/CurrencyContext'
 import Comparison from './Comparison'
@@ -17,7 +16,6 @@ export default function App () {
     return <div>loading...</div>
   }
 
-  console.warn('EXCHANGE RATE', exchangeRate)
   return (
     <div style={{ marginTop: 30, display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
       <h1 style={{ textDecoration: 'underline' }}>My Powdered Food</h1>

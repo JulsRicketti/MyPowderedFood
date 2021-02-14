@@ -1,6 +1,5 @@
 export default function convertToChosenCurrency (selectedCurrency, exchangeRate, priceAndServingsObj) {
   const { fullPrice, primaryCurrency } = priceAndServingsObj
-  console.warn(fullPrice, primaryCurrency)
 
   return (
   // If there is a price for the selected currency, just use that

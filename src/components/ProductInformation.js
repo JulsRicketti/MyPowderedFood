@@ -47,6 +47,7 @@ export default function ProductInformation ({ food = {}, vitaminsAndMineralsUnit
         <p><strong>Servings:</strong> {priceAndServings.servings}</p>
         <p><strong>Price per serving:</strong> {selectedCurrency} {(convertedPrice / priceAndServings.servings).toFixed(2)}</p>
         <p><strong>Price per calorie:</strong> {selectedCurrency} {((convertedPrice / priceAndServings.servings) / food.calories).toFixed(5)}</p>
+        <p><strong>Price per 100 calories:</strong> {selectedCurrency} {(((convertedPrice / priceAndServings.servings) / food.calories) * 100).toFixed(2)}</p>
         <p><strong>Website:</strong> <a href={food.site} target='_blank' rel="noopener noreferrer">{food.site}</a></p>
       </Card>
       {accomadatedRestrictionsComponent}
