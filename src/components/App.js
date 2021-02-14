@@ -13,6 +13,10 @@ export default function App () {
     setSelectedCurrency
   } = useContext(CurrencyContext)
 
+  if (!exchangeRate) {
+    return <div>loading...</div>
+  }
+
   console.warn('EXCHANGE RATE', exchangeRate)
   return (
     <div style={{ marginTop: 30, display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>

@@ -7,7 +7,10 @@ export const powderedFood = [
     site: 'https://queal.com/',
     calories: 424,
     priceAndServings: {
-      fullPrice: 13.23,
+      fullPrice: {
+        EUR: 8.50
+      },
+      primaryCurrency: 'EUR',
       servings: 5
     },
     accomodatedRestrictions: [
@@ -198,7 +201,10 @@ export const powderedFood = [
     site: 'https://holfood.com/',
     calories: 400,
     priceAndServings: {
-      fullPrice: 93.34,
+      fullPrice: {
+        CAD: 93.34
+      },
+      primaryCurrency: 'CAD',
       servings: 30
     },
     accomodatedRestrictions: [
@@ -389,7 +395,11 @@ export const powderedFood = [
     site: 'https://www.soylent.ca/',
     calories: 400,
     priceAndServings: {
-      fullPrice: 88,
+      fullPrice: {
+        CAD: 88,
+        USD: 64
+      },
+      primaryCurrency: 'USD',
       servings: 35
     },
     accomodatedRestrictions: [

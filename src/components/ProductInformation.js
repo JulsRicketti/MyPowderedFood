@@ -5,6 +5,7 @@ import { CheckCircleOutlined, CloseCircleOutlined } from '@ant-design/icons'
 import { CurrencyContext } from '../context/CurrencyContext'
 import { dietaryRestrictions } from '../data'
 import { alphabeticalSort, convertToProperUnit } from '../util'
+import convertToChosenCurrency from '../util/convertToChosenCurrency'
 
 export default function ProductInformation ({ food = {}, vitaminsAndMineralsUnit = 'mg', selectedDietaryRestrictions, isWinner }) {
   const { exchangeRate, selectedCurrency } = useContext(CurrencyContext)
@@ -36,14 +37,16 @@ export default function ProductInformation ({ food = {}, vitaminsAndMineralsUnit
     </Card>
   ) : null
 
+  const convertedPrice = convertToChosenCurrency(selectedCurrency, exchangeRate, priceAndServings)
+
   return (
     <>
       <Card type='inner' title={food.brand} style={sharedStyle}>
         <p><strong>Calories per serving: {food.calories}</strong></p>
-        <p><strong>Full Price:</strong> CAD ${priceAndServings.fullPrice}</p>
+        <p><strong>Full Price:</strong> {selectedCurrency} {convertedPrice}</p>
         <p><strong>Servings:</strong> {priceAndServings.servings}</p>
-        <p><strong>Price per serving:</strong> CAD ${(priceAndServings.fullPrice / food.priceAndServings.servings).toFixed(2)}</p>
-        <p><strong>Price per calorie:</strong> CAD ${((priceAndServings.fullPrice / food.priceAndServings.servings) / food.calories).toFixed(5)}</p>
+        <p><strong>Price per serving:</strong> {selectedCurrency} {(convertedPrice / priceAndServings.servings).toFixed(2)}</p>
+        <p><strong>Price per calorie:</strong> {selectedCurrency} {((convertedPrice / priceAndServings.servings) / food.calories).toFixed(5)}</p>
         <p><strong>Website:</strong> <a href={food.site} target='_blank' rel="noopener noreferrer">{food.site}</a></p>
       </Card>
       {accomadatedRestrictionsComponent}
