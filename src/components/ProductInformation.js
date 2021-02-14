@@ -1,11 +1,13 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import PropTypes from 'prop-types'
 import { Card, Divider } from 'antd'
 import { CheckCircleOutlined, CloseCircleOutlined } from '@ant-design/icons'
+import { CurrencyContext } from '../context/CurrencyContext'
 import { dietaryRestrictions } from '../data'
 import { alphabeticalSort, convertToProperUnit } from '../util'
 
 export default function ProductInformation ({ food = {}, vitaminsAndMineralsUnit = 'mg', selectedDietaryRestrictions, isWinner }) {
+  const { exchangeRate, selectedCurrency } = useContext(CurrencyContext)
   const { accomodatedRestrictions, macronutrients, vitaminsAndMinerals, priceAndServings } = food
   const vitaminsAndMineralsArray = Object.keys(vitaminsAndMinerals)
 

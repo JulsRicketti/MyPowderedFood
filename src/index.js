@@ -1,10 +1,13 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './components/App';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import App from './components/App'
+import { CurrencyProvider } from './context/CurrencyContext'
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <CurrencyProvider>
+      <App />
+    </CurrencyProvider>
   </React.StrictMode>,
   document.getElementById('root')
-);
+)
