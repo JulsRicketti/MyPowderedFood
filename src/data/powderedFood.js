@@ -94,7 +94,7 @@ export const powderedFood = [
         name: 'Vitamin B12',
         quantity: 0.81,
         unit: 'μg',
-        dailyPercentage: 20
+        dailyPercentage: 33
       },
       biotine: {
         name: 'Biotine',
@@ -289,7 +289,7 @@ export const powderedFood = [
         name: 'Vitamin B12',
         quantity: 0.81,
         unit: 'μg',
-        dailyPercentage: 20
+        dailyPercentage: 33
       },
       biotine: {
         name: 'Biotine',
@@ -485,7 +485,7 @@ export const powderedFood = [
         name: 'Vitamin B12',
         quantity: 0.81,
         unit: 'μg',
-        dailyPercentage: 20
+        dailyPercentage: 33
       },
       biotine: {
         name: 'Biotine',
@@ -576,6 +576,203 @@ export const powderedFood = [
         quantity: 110,
         unit: 'mg',
         dailyPercentage: 27.16
+      },
+      chromium: {
+        name: 'Chromium',
+        quantity: 0.07,
+        unit: 'mg',
+        dailyPercentage: '?'
+      }
+    }
+  },
+  {
+    id: 4,
+    brand: 'Huel (Black Edition)',
+    site: 'https://huel.com/',
+    calories: 400,
+    priceAndServings: {
+      fullPrice: {
+        USD: 83.34,
+        GBP: 55.56
+      },
+      primaryCurrency: 'GBP',
+      servings: 34
+    },
+    accomodatedRestrictions: [
+      'vegan', 'lactoseIntolerance', 'nutFree', 'glutenFree', 'kosher', 'halal'
+    ],
+    macronutrients: {
+      fat: {
+        total: 17,
+        saturated: 2.5,
+        trans: 0.5,
+        polysaturated: 12
+      },
+      carbohydrates: {
+        total: 24,
+        sugars: 5
+      },
+      protein: 40,
+      fibre: 6,
+      sodium: 420
+    },
+    vitaminsAndMinerals: {
+      vitaminA: {
+        name: 'Vitamin A',
+        quantity: 0.178,
+        unit: 'mg',
+        dailyPercentage: 20
+      },
+      vitaminD: {
+        name: 'Vitamin D',
+        quantity: 3.9,
+        unit: 'μg',
+        dailyPercentage: 20
+      },
+      vitaminE: {
+        name: 'Vitamin E',
+        quantity: 3.4,
+        unit: 'μg',
+        dailyPercentage: 23
+      },
+      vitaminK: {
+        name: 'Vitamin K',
+        quantity: 35,
+        unit: 'μg',
+        dailyPercentage: 29
+      },
+      vitaminC: {
+        name: 'Vitamin C',
+        quantity: 59,
+        unit: 'mg',
+        dailyPercentage: 66
+      },
+      thiamine: {
+        name: 'Thiamine',
+        quantity: 0.2,
+        unit: 'mg',
+        dailyPercentage: 17
+      },
+      riboflavine: {
+        name: 'Riboflavine',
+        quantity: 0.3,
+        unit: 'mg',
+        dailyPercentage: 23
+      },
+      niacine: {
+        name: 'Niacine',
+        quantity: 3.2,
+        unit: 'mg',
+        dailyPercentage: 20
+      },
+      vitaminB6: {
+        name: 'Vitamin B6',
+        quantity: 0.3,
+        unit: 'mg',
+        dailyPercentage: 18
+      },
+      folicAcid: {
+        // Note: it is called Foltate and seems to have inconsistent measurements with the others!
+        name: 'Folic Acid',
+        quantity: 79,
+        unit: 'μg',
+        dailyPercentage: 20
+      },
+      vitaminB12: {
+        name: 'Vitamin B12',
+        quantity: 0.8,
+        unit: 'μg',
+        dailyPercentage: 33
+      },
+      biotine: {
+        name: 'Biotine',
+        quantity: 0.012,
+        unit: 'mg',
+        dailyPercentage: 40
+      },
+      vitaminB5: { // Also called Pantothetic Acid
+        name: 'Vitamin B5',
+        quantity: 1.2,
+        unit: 'mg',
+        dailyPercentage: 24
+      },
+      potassium: {
+        name: 'Potassium',
+        quantity: 930,
+        unit: 'mg',
+        dailyPercentage: 20
+      },
+      chloride: {
+        name: 'Chloride',
+        quantity: 454,
+        unit: 'mg',
+        dailyPercentage: 20
+      },
+      calcium: {
+        name: 'Calcium',
+        quantity: 260,
+        unit: 'mg',
+        dailyPercentage: 20
+      },
+      phosphorus: {
+        name: 'Phosphorus',
+        quantity: 355,
+        unit: 'mg',
+        dailyPercentage: 28
+      },
+      magnesium: {
+        name: 'Magnesium',
+        quantity: 87,
+        unit: 'mg',
+        dailyPercentage: 21
+      },
+      iron: {
+        name: 'Iron',
+        quantity: 8.9,
+        unit: 'mg',
+        dailyPercentage: 50
+      },
+      zinc: {
+        name: 'Zinc',
+        quantity: 4.6,
+        unit: 'mg',
+        dailyPercentage: 42
+      },
+      copper: {
+        name: 'Copper',
+        quantity: 0.5,
+        unit: 'mg',
+        dailyPercentage: 56
+      },
+      manganese: {
+        name: 'Manganese',
+        quantity: 0.9,
+        unit: 'mg',
+        dailyPercentage: 39
+      },
+      selenium: {
+        name: 'Selenium',
+        quantity: 0.033,
+        unit: 'mg',
+        dailyPercentage: 60
+      },
+      molybdenum: {
+        name: 'Molybdenum',
+        quantity: 0.037,
+        unit: 'mg',
+        dailyPercentage: 82
+      },
+      iodine: {
+        name: 'Iodine',
+        quantity: 30,
+        unit: 'μg',
+        dailyPercentage: 20
+      },
+      choline: {
+        name: 'Choline',
+        quantity: 118,
+        unit: 'mg',
+        dailyPercentage: 21
       },
       chromium: {
         name: 'Chromium',
