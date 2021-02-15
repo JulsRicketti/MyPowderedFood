@@ -978,5 +978,200 @@ export const powderedFood = [
         dailyPercentage: 23
       }
     }
+  },
+  {
+    id: 6,
+    brand: 'Plenny Shake', // (Jimmy Joy)
+    site: 'https://jimmyjoy.com/',
+    calories: 400,
+    priceAndServings: {
+      fullPrice: {
+        EUR: 14
+      },
+      primaryCurrency: 'EUR',
+      servings: 10
+    },
+    accomodatedRestrictions: [
+      'vegan', 'lactoseIntolerance', 'nutFree', 'glutenFree', 'kosher', 'halal'
+    ],
+    macronutrients: {
+      fat: {
+        total: 15,
+        saturated: 2.3,
+        trans: 0, // Doesn't say (?)
+        polysaturated: 0 // Doesn't say (?)
+      },
+      carbohydrates: {
+        total: 43,
+        sugars: 3.2
+      },
+      protein: 20,
+      fibre: 8.2,
+      sodium: 120 // It has salt as 0.30. used a converter to find out...
+    },
+    vitaminsAndMinerals: {
+      vitaminA: {
+        name: 'Vitamin A',
+        quantity: 0.160,
+        unit: 'mg',
+        dailyPercentage: 20
+      },
+      vitaminD: {
+        name: 'Vitamin D',
+        quantity: 5,
+        unit: 'μg',
+        dailyPercentage: 100
+      },
+      vitaminE: {
+        name: 'Vitamin E',
+        quantity: 4,
+        unit: 'μg',
+        dailyPercentage: 33
+      },
+      vitaminK: {
+        name: 'Vitamin K',
+        quantity: 16,
+        unit: 'μg',
+        dailyPercentage: 21
+      },
+      vitaminC: {
+        name: 'Vitamin C',
+        quantity: 30,
+        unit: 'mg',
+        dailyPercentage: 38
+      },
+      thiamine: {
+        name: 'Thiamine',
+        quantity: 0.4,
+        unit: 'mg',
+        dailyPercentage: 36
+      },
+      riboflavine: {
+        name: 'Riboflavine',
+        quantity: 0.3,
+        unit: 'mg',
+        dailyPercentage: 23
+      },
+      niacine: {
+        name: 'Niacine',
+        quantity: 3.6,
+        unit: 'mg',
+        dailyPercentage: 23
+      },
+      vitaminB6: {
+        name: 'Vitamin B6',
+        quantity: 0.4,
+        unit: 'mg',
+        dailyPercentage: 24
+      },
+      folicAcid: {
+        name: 'Folic Acid',
+        quantity: 60,
+        unit: 'μg',
+        dailyPercentage: 30
+      },
+      vitaminB12: {
+        name: 'Vitamin B12',
+        quantity: 3.2,
+        unit: 'μg',
+        dailyPercentage: 128
+      },
+      biotine: {
+        name: 'Biotine',
+        quantity: 0.010,
+        unit: 'mg',
+        dailyPercentage: 20
+      },
+      vitaminB5: { // Also called Pantothetic Acid
+        name: 'Vitamin B5',
+        quantity: 1.2,
+        unit: 'mg',
+        dailyPercentage: 24
+      },
+      potassium: {
+        name: 'Potassium',
+        quantity: 400,
+        unit: 'mg',
+        dailyPercentage: 20
+      },
+      chloride: {
+        name: 'Chloride',
+        quantity: 279,
+        unit: 'mg',
+        dailyPercentage: 35
+      },
+      calcium: {
+        name: 'Calcium',
+        quantity: 185,
+        unit: 'mg',
+        dailyPercentage: 23
+      },
+      phosphorus: {
+        name: 'Phosphorus',
+        quantity: 140,
+        unit: 'mg',
+        dailyPercentage: 20
+      },
+      magnesium: {
+        name: 'Magnesium',
+        quantity: 75,
+        unit: 'mg',
+        dailyPercentage: 20
+      },
+      iron: {
+        name: 'Iron',
+        quantity: 3.2,
+        unit: 'mg',
+        dailyPercentage: 23
+      },
+      zinc: {
+        name: 'Zinc',
+        quantity: 2,
+        unit: 'mg',
+        dailyPercentage: 20
+      },
+      copper: {
+        name: 'Copper',
+        quantity: 0.4,
+        unit: 'mg',
+        dailyPercentage: 40
+      },
+      manganese: {
+        name: 'Manganese',
+        quantity: 1,
+        unit: 'mg',
+        dailyPercentage: 50
+      },
+      selenium: {
+        name: 'Selenium',
+        quantity: 0.018,
+        unit: 'mg',
+        dailyPercentage: 33
+      },
+      molybdenum: {
+        name: 'Molybdenum',
+        quantity: 0.013,
+        unit: 'mg',
+        dailyPercentage: 26
+      },
+      iodine: {
+        name: 'Iodine',
+        quantity: 30,
+        unit: 'μg',
+        dailyPercentage: 20
+      },
+      choline: {
+        name: 'Choline',
+        quantity: 0,
+        unit: 'mg',
+        dailyPercentage: 0
+      },
+      chromium: {
+        name: 'Chromium',
+        quantity: 0.08,
+        unit: 'mg',
+        dailyPercentage: 20
+      }
+    }
   }
 ]
