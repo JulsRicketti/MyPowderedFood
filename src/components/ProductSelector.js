@@ -4,7 +4,7 @@ import { ProductContext } from '../context/ProductContext'
 import { alphabeticalSort } from '../util/alphabeticalSort'
 
 export default function ProductSelector () {
-  const { powderedFood, selectedProducts, setSelectedProducts } = useContext(ProductContext)
+  const { powderedFood, setSelectedProducts } = useContext(ProductContext)
 
   const duplicateRemoval = {}
   const brandList = powderedFood
@@ -21,7 +21,7 @@ export default function ProductSelector () {
   const options = powderedFood.sort((a, b) => alphabeticalSort(a, b, 'product'))
 
   return (
-    <div style={{ width: '100%', padding: '20px 30px'}}>
+    <div style={{ width: '100%', padding: '20px 30px' }}>
       <Select
         showSearch
         style={{ width: '100%' }}
@@ -31,10 +31,10 @@ export default function ProductSelector () {
         onChange={(selected) => {
           setSelectedProducts(
             selected
-            .map((s) => {
-              const [_, product] = s.split(' - ')
-              return powderedFood.find((pf) => pf.product === product)
-            })
+              .map((s) => {
+                const product = s.split(' - ')[0]
+                return powderedFood.find((pf) => pf.product === product)
+              })
           )
         }}
       >
