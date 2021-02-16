@@ -32,7 +32,7 @@ export default function ProductSelector () {
           setSelectedProducts(
             selected
               .map((s) => {
-                const product = s.split(' - ')[0]
+                const product = s.split(' - ')[1]
                 return powderedFood.find((pf) => pf.product === product)
               })
           )
