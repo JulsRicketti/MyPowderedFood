@@ -27,7 +27,7 @@ export default function ProductSelector () {
         style={{ width: '100%' }}
         allowClear
         mode='multiple'
-        placeholder='Select As Many Products as you wish'
+        placeholder='Select as many products as you wish'
         onChange={(selected) => {
           setSelectedProducts(
             selected
