@@ -41,7 +41,7 @@ export default function ProductInformation ({ food = {}, vitaminsAndMineralsUnit
 
   return (
     <>
-      <Card type='inner' title={food.brand} style={sharedStyle}>
+      <Card type='inner' title={`${food.brand} - ${food.product}`} style={sharedStyle}>
         <p><strong>Calories per serving: {food.calories}</strong></p>
         <p><strong>Full Price:</strong> {selectedCurrency} {convertedPrice}</p>
         <p><strong>Servings:</strong> {priceAndServings.servings}</p>

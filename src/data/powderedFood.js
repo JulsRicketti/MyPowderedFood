@@ -4,6 +4,7 @@ export const powderedFood = [
     // they all seem to have the same value
     id: 1,
     brand: 'Queal',
+    product: 'Steady Shake (Vegan)',
     site: 'https://queal.com/',
     calories: 424,
     priceAndServings: {
@@ -198,6 +199,7 @@ export const powderedFood = [
     // Note to self: this is just the chocolate hol food
     id: 2,
     brand: 'Hol Food',
+    product: 'Chocolate/Vanilla',
     site: 'https://holfood.com/',
     calories: 400,
     priceAndServings: {
@@ -392,7 +394,8 @@ export const powderedFood = [
   {
     id: 3,
     brand: 'Soylent',
-    site: 'https://www.soylent.ca/',
+    product: 'Powder',
+    site: 'https://www.soylent.com/',
     calories: 400,
     priceAndServings: {
       fullPrice: {
@@ -587,7 +590,8 @@ export const powderedFood = [
   },
   {
     id: 4,
-    brand: 'Huel (Black Edition)',
+    brand: 'Huel',
+    product: 'Huel Black Edition',
     site: 'https://huel.com/',
     calories: 400,
     priceAndServings: {
@@ -785,6 +789,7 @@ export const powderedFood = [
   {
     id: 5,
     brand: 'Huel',
+    product: 'Huel Powder',
     site: 'https://huel.com/',
     calories: 400,
     priceAndServings: {
@@ -981,7 +986,8 @@ export const powderedFood = [
   },
   {
     id: 6,
-    brand: 'Plenny Shake', // (Jimmy Joy)
+    brand: 'Jimmy Joy',
+    product: 'Plenny Shake',
     site: 'https://jimmyjoy.com/',
     calories: 400,
     priceAndServings: {
@@ -1176,7 +1182,8 @@ export const powderedFood = [
   },
   {
     id: 7,
-    brand: 'Plenny Shake Active', // (Jimmy Joy)
+    brand: 'Jimmy Joy',
+    product: 'Plenny Shake Active',
     site: 'https://jimmyjoy.com/',
     calories: 400,
     priceAndServings: {

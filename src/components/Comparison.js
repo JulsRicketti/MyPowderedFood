@@ -1,10 +1,13 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import { Row, Col, Alert } from 'antd'
 import { powderedFood, priorities } from '../data'
 import ProductInformation from './ProductInformation'
 import Parameters from './Parameters'
+import { ProductContext } from '../context/ProductContext'
 
 export default function Comparison () {
+  const { selectedProducts } = useContext(ProductContext)
+
   const [selectedDietaryRestrictions, setSelectedDietaryRestrictions] = useState([])
   const [selectedPriority, setSelectedPriority] = useState('')
 
@@ -23,18 +26,18 @@ export default function Comparison () {
           setSelectedPriority={setSelectedPriority}
         />
       </div>
-      <Row style={{ marginTop: 10 }}>
-        {powderedFood.map(food => (
-          <Col key={food.id} style={{ marginRight: 5 }} >
-            <ProductInformation
-              food={food}
-              selectedDietaryRestrictions={selectedDietaryRestrictions}
-              selectedPriority={selectedPriority}
-              isWinner={winner && (Array.isArray(winner) ? winner.map(w => w.brand).includes(food.brand) : food.brand === winner.brand)}
-            />
-          </Col>
-        ))}
-      </Row>
+        <Row style={{ marginTop: 10 }}>
+          {selectedProducts.length ? selectedProducts.map(food => (
+            <Col key={food.id} style={{ marginRight: 5 }} >
+              <ProductInformation
+                food={food}
+                selectedDietaryRestrictions={selectedDietaryRestrictions}
+                selectedPriority={selectedPriority}
+                isWinner={winner && (Array.isArray(winner) ? winner.map(w => w.brand).includes(food.brand) : food.brand === winner.brand)}
+              />
+            </Col>
+          )) : <h3>Select the products you wish to compare.</h3>}
+        </Row>
       <Row>
         {sessionStorage && sessionStorage.getItem('hideUpdatedAtAlert')
           ? null
