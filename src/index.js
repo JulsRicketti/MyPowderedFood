@@ -4,6 +4,8 @@ import App from './components/App'
 import { CurrencyProvider } from './context/CurrencyContext'
 import { ProductProvider } from './context/ProductContext'
 
+import './styles/index.scss'
+
 ReactDOM.render(
   <React.StrictMode>
     <CurrencyProvider>
