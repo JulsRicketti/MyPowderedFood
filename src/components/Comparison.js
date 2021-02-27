@@ -18,7 +18,6 @@ export default function Comparison () {
   let winner = null
   if (typeof priorityObject.eval === 'function' && selectedProducts.length) {
     winner = priorityObject.eval(selectedProducts, { exchangeRate, selectedCurrency })
-    console.warn('WINNER', winner)
   }
 
   return (

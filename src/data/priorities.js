@@ -18,10 +18,10 @@ export const priorities = {
   },
   lowPricePerServing: {
     name: 'Lowest Price Per Serving',
-    eval: (selectedProducts) => {
+    eval: (selectedProducts, { selectedCurrency, exchangeRate }) => {
       return selectedProducts.reduce((lowestPrice, current) => {
-        const lowestPricePerServing = lowestPrice.priceAndServings.fullPrice / lowestPrice.priceAndServings.servings
-        const currentPricePerServing = current.priceAndServings.fullPrice / current.priceAndServings.servings
+        const lowestPricePerServing = convertToChosenCurrency(selectedCurrency, exchangeRate, lowestPrice.priceAndServings) / lowestPrice.priceAndServings.servings
+        const currentPricePerServing = convertToChosenCurrency(selectedCurrency, exchangeRate, current.priceAndServings) / current.priceAndServings.servings
         return currentPricePerServing < lowestPricePerServing
           ? current
           : lowestPrice
@@ -30,10 +30,12 @@ export const priorities = {
   },
   lowPricePerCalories: {
     name: 'Lowest Price Per Calorie',
-    eval: (selectedProducts) => {
+    eval: (selectedProducts, { selectedCurrency, exchangeRate }) => {
       return selectedProducts.reduce((lowestPrice, current) => {
-        const lowestPricePerCalories = (lowestPrice.priceAndServings.fullPrice / lowestPrice.priceAndServings.servings) / lowestPrice.calories
-        const currentPricePerCalories = (current.priceAndServings.fullPrice / current.priceAndServings.servings) / current.calories
+        const lowestFullPrice = convertToChosenCurrency(selectedCurrency, exchangeRate, lowestPrice.priceAndServings)
+        const lowestPricePerCalories = (lowestFullPrice / lowestPrice.priceAndServings.servings) / lowestPrice.calories
+        const currentFullPrice = convertToChosenCurrency(selectedCurrency, exchangeRate, current.priceAndServings)
+        const currentPricePerCalories = (currentFullPrice / current.priceAndServings.servings) / current.calories
         return currentPricePerCalories < lowestPricePerCalories
           ? current
           : lowestPrice
