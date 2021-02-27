@@ -4,8 +4,10 @@ import { priorities } from '../data'
 import ProductInformation from './ProductInformation'
 import Parameters from './Parameters'
 import { ProductContext } from '../context/ProductContext'
+import { CurrencyContext } from '../context/CurrencyContext'
 
 export default function Comparison () {
+  const { exchangeRate, selectedCurrency } = useContext(CurrencyContext)
   const { selectedProducts } = useContext(ProductContext)
 
   const [selectedDietaryRestrictions, setSelectedDietaryRestrictions] = useState([])
@@ -14,8 +16,9 @@ export default function Comparison () {
   const priorityObject = priorities[selectedPriority] || {}
 
   let winner = null
-  if (typeof priorityObject.eval === 'function') {
-    winner = priorityObject.eval()
+  if (typeof priorityObject.eval === 'function' && selectedProducts.length) {
+    winner = priorityObject.eval(selectedProducts, { exchangeRate, selectedCurrency })
+    console.warn('WINNER', winner)
   }
 
   return (
@@ -33,7 +36,7 @@ export default function Comparison () {
               food={food}
               selectedDietaryRestrictions={selectedDietaryRestrictions}
               selectedPriority={selectedPriority}
-              isWinner={winner && (Array.isArray(winner) ? winner.map(w => w.brand).includes(food.brand) : food.brand === winner.brand)}
+              isWinner={winner && (Array.isArray(winner) ? winner.map(w => w.product).includes(food.product) : food.product === winner.product)}
             />
           </Col>
         )) : <h3>Select the products you wish to compare.</h3>}

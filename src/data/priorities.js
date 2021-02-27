@@ -1,20 +1,25 @@
-import { powderedFood } from './powderedFood'
+import convertToChosenCurrency from '../util/convertToChosenCurrency'
 
 export const priorities = {
   lowPrice: {
     name: 'Lowest Full Price',
-    eval: () => {
-      return powderedFood.reduce((lowestPrice, current) => (
-        current.priceAndServings.fullPrice < lowestPrice.priceAndServings.fullPrice
-          ? current
-          : lowestPrice
-      ))
+    eval: (selectedProducts, { selectedCurrency, exchangeRate }) => {
+      return selectedProducts.reduce((lowestPrice, current) => {
+        const currentPrice = convertToChosenCurrency(selectedCurrency, exchangeRate, current.priceAndServings)
+        const lowestPricePrice = convertToChosenCurrency(selectedCurrency, exchangeRate, lowestPrice.priceAndServings)
+
+        return (
+          currentPrice < lowestPricePrice
+            ? current
+            : lowestPrice
+        )
+      })
     }
   },
   lowPricePerServing: {
     name: 'Lowest Price Per Serving',
-    eval: () => {
-      return powderedFood.reduce((lowestPrice, current) => {
+    eval: (selectedProducts) => {
+      return selectedProducts.reduce((lowestPrice, current) => {
         const lowestPricePerServing = lowestPrice.priceAndServings.fullPrice / lowestPrice.priceAndServings.servings
         const currentPricePerServing = current.priceAndServings.fullPrice / current.priceAndServings.servings
         return currentPricePerServing < lowestPricePerServing
@@ -25,8 +30,8 @@ export const priorities = {
   },
   lowPricePerCalories: {
     name: 'Lowest Price Per Calorie',
-    eval: () => {
-      return powderedFood.reduce((lowestPrice, current) => {
+    eval: (selectedProducts) => {
+      return selectedProducts.reduce((lowestPrice, current) => {
         const lowestPricePerCalories = (lowestPrice.priceAndServings.fullPrice / lowestPrice.priceAndServings.servings) / lowestPrice.calories
         const currentPricePerCalories = (current.priceAndServings.fullPrice / current.priceAndServings.servings) / current.calories
         return currentPricePerCalories < lowestPricePerCalories
@@ -37,8 +42,8 @@ export const priorities = {
   },
   lowCalories: {
     name: 'Low Calories',
-    eval: () => {
-      return powderedFood.reduce((lowestCalories, current) => {
+    eval: (selectedProducts) => {
+      return selectedProducts.reduce((lowestCalories, current) => {
         if (current.calories === lowestCalories.calories) {
           return Array.isArray(lowestCalories)
             ? [...lowestCalories, current]
@@ -55,8 +60,8 @@ export const priorities = {
   },
   highCalories: {
     name: 'High Calories',
-    eval: () => {
-      return powderedFood.reduce((highestCalories, current) => (
+    eval: (selectedProducts) => {
+      return selectedProducts.reduce((highestCalories, current) => (
         current.calories > highestCalories.calories
           ? current
           : highestCalories
@@ -65,8 +70,8 @@ export const priorities = {
   },
   lowSugar: {
     name: 'Low Sugar',
-    eval: () => {
-      return powderedFood.reduce((lowestSugar, current) => (
+    eval: (selectedProducts) => {
+      return selectedProducts.reduce((lowestSugar, current) => (
         current.macronutrients.carbohydrates.sugars < lowestSugar.macronutrients.carbohydrates.sugars
           ? current
           : lowestSugar
@@ -75,8 +80,8 @@ export const priorities = {
   },
   lowCarb: {
     name: 'Low Carbs',
-    eval: () => {
-      return powderedFood.reduce((lowestCarbs, current) => (
+    eval: (selectedProducts) => {
+      return selectedProducts.reduce((lowestCarbs, current) => (
         current.macronutrients.carbohydrates.total < lowestCarbs.macronutrients.carbohydrates.total
           ? current
           : lowestCarbs
@@ -85,8 +90,8 @@ export const priorities = {
   },
   highFiber: {
     name: 'High Fiber',
-    eval: () => {
-      return powderedFood.reduce((highestFiber, current) => (
+    eval: (selectedProducts) => {
+      return selectedProducts.reduce((highestFiber, current) => (
         current.macronutrients.fibre > highestFiber.macronutrients.fibre
           ? current
           : highestFiber
@@ -95,8 +100,8 @@ export const priorities = {
   },
   highProtein: {
     name: 'High Protein',
-    eval: () => {
-      return powderedFood.reduce((highestProtein, current) => (
+    eval: (selectedProducts) => {
+      return selectedProducts.reduce((highestProtein, current) => (
         current.macronutrients.protein > highestProtein.macronutrients.protein
           ? current
           : highestProtein
@@ -105,8 +110,8 @@ export const priorities = {
   },
   lowSodium: {
     name: 'Low Sodium',
-    eval: () => {
-      return powderedFood.reduce((lowestSodium, current) => (
+    eval: (selectedProducts) => {
+      return selectedProducts.reduce((lowestSodium, current) => (
         current.macronutrients.sodium < lowestSodium.macronutrients.sodium
           ? current
           : lowestSodium
@@ -115,8 +120,8 @@ export const priorities = {
   },
   lowFat: {
     name: 'Low Fat',
-    eval: () => {
-      return powderedFood.reduce((lowestFat, current) => (
+    eval: (selectedProducts) => {
+      return selectedProducts.reduce((lowestFat, current) => (
         current.macronutrients.fat.total < lowestFat.macronutrients.fat.total
           ? current
           : lowestFat
@@ -125,8 +130,8 @@ export const priorities = {
   },
   highFat: {
     name: 'High Fat',
-    eval: () => {
-      return powderedFood.reduce((highestFat, current) => (
+    eval: (selectedProducts) => {
+      return selectedProducts.reduce((highestFat, current) => (
         current.macronutrients.fat.total > highestFat.macronutrients.fat.total
           ? current
           : highestFat
@@ -135,9 +140,9 @@ export const priorities = {
   },
   multiVitaminsAndMinerals: {
     name: 'Most Vitamins and Minerals',
-    eval: () => {
+    eval: (selectedProducts) => {
       // Current heurestic: just calculate the absolute total
-      return powderedFood.reduce((mostVitaminsAndMinerals, current) => {
+      return selectedProducts.reduce((mostVitaminsAndMinerals, current) => {
         const currentTotalVitaminsAndMinerals = Object.keys(current.vitaminsAndMinerals).reduce((c, key) => {
           if (typeof current.vitaminsAndMinerals[key].quantity === 'number') {
             return c + current.vitaminsAndMinerals[key].quantity
@@ -163,8 +168,8 @@ export const priorities = {
   },
   mostAccomodatedRestrictions: {
     name: 'Most Accomodated Restrictions',
-    eval: () => {
-      return powderedFood.reduce((mostAccomodatedRestrictions, current) => (
+    eval: (selectedProducts) => {
+      return selectedProducts.reduce((mostAccomodatedRestrictions, current) => (
         current.accomodatedRestrictions.length > mostAccomodatedRestrictions.accomodatedRestrictions.length
           ? current
           : mostAccomodatedRestrictions
