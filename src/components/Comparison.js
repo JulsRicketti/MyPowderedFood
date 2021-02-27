@@ -13,17 +13,18 @@ export default function Comparison () {
   const [selectedDietaryRestrictions, setSelectedDietaryRestrictions] = useState([])
   const [selectedPriority, setSelectedPriority] = useState('')
 
-  const priorityObject = priorities[selectedPriority] || {}
+  const priorityObject = priorities(selectedProducts, { exchangeRate, selectedCurrency })[selectedPriority] || {}
 
   let winner = null
   if (typeof priorityObject.eval === 'function' && selectedProducts.length) {
-    winner = priorityObject.eval(selectedProducts, { exchangeRate, selectedCurrency })
+    winner = priorityObject.eval()
   }
 
   return (
     <div style={{ marginBottom: '30px' }}>
       <div style={{ display: 'flex', flexDirection: 'row' }}>
         <Parameters
+          priorities={priorities([], { exchangeRate, selectedCurrency })}
           setSelectedDietaryRestrictions={setSelectedDietaryRestrictions}
           setSelectedPriority={setSelectedPriority}
         />

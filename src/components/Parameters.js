@@ -1,10 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Col, Select } from 'antd'
-import { dietaryRestrictions, priorities } from '../data'
+import { dietaryRestrictions } from '../data'
 import { alphabeticalSort } from '../util'
 
-export default function Parameters ({ setSelectedDietaryRestrictions, setSelectedPriority }) {
+export default function Parameters ({ priorities, setSelectedDietaryRestrictions, setSelectedPriority }) {
   const dietaryRestrictionsArray = Object.keys(dietaryRestrictions)
   const prioritiesArray = Object.keys(priorities)
 
@@ -69,5 +69,6 @@ export default function Parameters ({ setSelectedDietaryRestrictions, setSelecte
 
 Parameters.propTypes = {
   setSelectedDietaryRestrictions: PropTypes.func.isRequired,
-  setSelectedPriority: PropTypes.func.isRequired
+  setSelectedPriority: PropTypes.func.isRequired,
+  priorities: PropTypes.object.isRequired
 }
