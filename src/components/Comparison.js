@@ -21,14 +21,12 @@ export default function Comparison () {
   }
 
   return (
-    <div style={{ marginBottom: '30px' }}>
-      <div style={{ display: 'flex', flexDirection: 'row' }}>
-        <Parameters
-          priorities={priorities([], { exchangeRate, selectedCurrency })}
-          setSelectedDietaryRestrictions={setSelectedDietaryRestrictions}
-          setSelectedPriority={setSelectedPriority}
-        />
-      </div>
+    <div className='comparison'>
+      <Parameters
+        priorities={priorities([], { exchangeRate, selectedCurrency })}
+        setSelectedDietaryRestrictions={setSelectedDietaryRestrictions}
+        setSelectedPriority={setSelectedPriority}
+      />
       <Row style={{ marginTop: 10 }}>
         {selectedProducts.length ? selectedProducts.map(food => (
           <Col key={food.id} style={{ marginRight: 5 }} >
@@ -48,11 +46,9 @@ export default function Comparison () {
             <Alert
               style={{ width: '100%', marginTop: 10 }}
               message={
-                <>
-                  <p>
+                <p>
                   Information last updated on February 15th, 2021. If information is innacurate please <a href="https://www.reddit.com/message/compose/?to=monkeyMammoth4" target='_blank' rel="noopener noreferrer">contact me</a>.
-                  </p>
-                </>
+                </p>
               }
               type='info'
               showIcon

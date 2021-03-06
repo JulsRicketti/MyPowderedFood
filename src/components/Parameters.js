@@ -8,12 +8,10 @@ export default function Parameters ({ priorities, setSelectedDietaryRestrictions
   const dietaryRestrictionsArray = Object.keys(dietaryRestrictions)
   const prioritiesArray = Object.keys(priorities)
 
-  const headerStyle = { display: 'flex', justifyContent: 'center' }
-
   return (
-    <>
+    <div className='parameters'>
       <Col xs={24} sm={24} lg={12}>
-        <div style={headerStyle}>
+        <div className='header'>
           <h2>Dietary Priorities</h2>
         </div>
         <Select
@@ -38,7 +36,7 @@ export default function Parameters ({ priorities, setSelectedDietaryRestrictions
         </Select>
       </Col>
       <Col xs={24} sm={24} lg={12}>
-        <div style={headerStyle}>
+        <div className='header'>
           <h2>Dietary Restrictions</h2>
         </div>
         <Select
@@ -63,7 +61,7 @@ export default function Parameters ({ priorities, setSelectedDietaryRestrictions
             ))}
         </Select>
       </Col>
-    </>
+    </div>
   )
 }
 

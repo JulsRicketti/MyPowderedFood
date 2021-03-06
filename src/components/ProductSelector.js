@@ -21,10 +21,9 @@ export default function ProductSelector () {
   const options = powderedFood.sort((a, b) => alphabeticalSort(a, b, 'product'))
 
   return (
-    <div style={{ width: '100%', padding: '20px 30px' }}>
+    <div className='product-selector'>
       <Select
         showSearch
-        style={{ width: '100%' }}
         allowClear
         mode='multiple'
         placeholder='Select as many products as you wish'

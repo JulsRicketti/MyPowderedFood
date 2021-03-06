@@ -1,0 +1,63 @@
+/**************************************************
+App wrapper
+**************************************************/
+.app-layout {
+	margin-top: 30px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.app-header {
+	text-decoration: underline;
+}
+
+/**************************************************
+Currency Selector
+**************************************************/
+.currency-selector {
+	position: absolute;
+	top: 30px;
+	right: 30px;
+
+	.ant-select {
+		width: 100%;
+	}
+}
+
+/**************************************************
+Product Selector
+**************************************************/
+.product-selector {
+	width: 100%;
+	padding: 20px 30px;
+
+	.ant-select {
+		width: 100%;
+	}
+}
+
+/**************************************************
+Comparison
+**************************************************/
+.comparison {
+	margin-bottom: 30px;
+
+}
+
+/**************************************************
+Parameters
+**************************************************/
+.parameters {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+
+	.header {
+		display: flex;
+		justify-content: center;
+	}
+}
+
+

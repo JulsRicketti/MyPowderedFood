@@ -18,8 +18,8 @@ export default function App () {
   }
 
   return (
-    <div style={{ marginTop: 30, display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
-      <h1 style={{ textDecoration: 'underline' }}>My Powdered Food</h1>
+    <div className='app-layout'>
+      <h1 className='app-header'>My Powdered Food</h1>
       <ProductSelector/>
       <CurrencySeletor selectedCurrency={selectedCurrency} setSelectedCurrency={setSelectedCurrency}/>
       <Comparison/>

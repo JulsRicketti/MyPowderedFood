@@ -5,10 +5,9 @@ import { currencies } from '../data'
 
 export default function CurrencySeletor ({ selectedCurrency, setSelectedCurrency }) {
   return (
-    <div style={{ position: 'absolute', top: 30, right: 30 }}>
+    <div className='currency-selector'>
       <Select
         showSearch
-        style={{ width: 100 }}
         value={selectedCurrency}
         onChange={(currency) => {
           localStorage.setItem('currency', currency)
