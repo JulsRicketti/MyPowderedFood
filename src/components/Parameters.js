@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Col, Select } from 'antd'
+import { Row, Col, Select } from 'antd'
 import { dietaryRestrictions } from '../data'
 import { alphabeticalSort } from '../util'
 
@@ -9,7 +9,7 @@ export default function Parameters ({ priorities, setSelectedDietaryRestrictions
   const prioritiesArray = Object.keys(priorities)
 
   return (
-    <div className='parameters'>
+    <Row className='parameters'>
       <Col xs={24} sm={24} lg={12}>
         <div className='header'>
           <h2>Dietary Priorities</h2>
@@ -61,7 +61,7 @@ export default function Parameters ({ priorities, setSelectedDietaryRestrictions
             ))}
         </Select>
       </Col>
-    </div>
+    </Row>
   )
 }
 
