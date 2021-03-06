@@ -27,9 +27,9 @@ export default function Comparison () {
         setSelectedDietaryRestrictions={setSelectedDietaryRestrictions}
         setSelectedPriority={setSelectedPriority}
       />
-      <Row style={{ marginTop: 10 }}>
+      <Row className='product-information-wrapper' justify='center' wrap={false} gutter={5}>
         {selectedProducts.length ? selectedProducts.map(food => (
-          <Col key={food.id} style={{ marginRight: 5 }} >
+          <Col key={food.id}>
             <ProductInformation
               food={food}
               selectedDietaryRestrictions={selectedDietaryRestrictions}
