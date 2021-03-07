@@ -27,7 +27,10 @@ export default function Comparison () {
         setSelectedDietaryRestrictions={setSelectedDietaryRestrictions}
         setSelectedPriority={setSelectedPriority}
       />
-      <Row className='product-information-wrapper' justify='center' wrap={false} gutter={5}>
+
+      {winner && <Row className='winner'><div>Winner: {winner.brand} - {winner.product}</div></Row>}
+
+      <Row className='product-information-wrapper' justify='center' gutter={5}>
         {selectedProducts.length ? selectedProducts.map(food => (
           <Col key={food.id}>
             <ProductInformation

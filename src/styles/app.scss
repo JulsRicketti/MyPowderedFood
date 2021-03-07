@@ -66,6 +66,26 @@ Comparison
 .comparison {
 	margin-bottom: 30px;
 
+	.winner {
+		background-color: #75bad46e;
+		display: flex;
+		justify-content: center;
+		margin: 10px -5px;
+		align-items:center;
+		align-content: center;
+		height: 35px;
+
+		div {
+			font-size: 16px;
+			font-weight: bold;
+		}
+
+		// Medium screens and up
+		@media only screen and (min-width: $medium_screens_width) {
+			display: none;
+		}
+	}
+
 	.product-information-wrapper {
 		margin-top: 10px;
 	}
