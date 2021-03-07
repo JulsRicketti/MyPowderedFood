@@ -48,14 +48,14 @@ export const priorities = (selectedProducts = [], { selectedCurrency = 'USD', ex
     name: 'Low Calories',
     eval: () => {
       return selectedProducts.reduce((lowestCalories, current) => {
-        if (current.calories === lowestCalories.calories) {
+        if (Array.isArray(lowestCalories) ? lowestCalories[0].calories === current.calories : current.calories === lowestCalories.calories) {
           return Array.isArray(lowestCalories)
             ? [...lowestCalories, current]
             : [lowestCalories, current]
         }
-        const lc = Array.isArray(lowestCalories.calories) ? lowestCalories[0].calories : lowestCalories.calories
+        const lc = Array.isArray(lowestCalories) ? lowestCalories[0] : lowestCalories
         return (
-          current.calories < lc
+          current.calories < lc.calories
             ? current
             : lowestCalories
         )
@@ -65,11 +65,19 @@ export const priorities = (selectedProducts = [], { selectedCurrency = 'USD', ex
   highCalories: {
     name: 'High Calories',
     eval: () => {
-      return selectedProducts.reduce((highestCalories, current) => (
-        current.calories > highestCalories.calories
-          ? current
-          : highestCalories
-      ))
+      return selectedProducts.reduce((highestCalories, current) => {
+        if (Array.isArray(highestCalories) ? highestCalories[0].calories === current.calories : current.calories === highestCalories.calories) {
+          return Array.isArray(highestCalories)
+            ? [...highestCalories, current]
+            : [highestCalories, current]
+        }
+        const hc = Array.isArray(highestCalories) ? highestCalories[0] : highestCalories
+        return (
+          current.calories > hc.calories
+            ? current
+            : highestCalories
+        )
+      })
     }
   },
   lowSugar: {

@@ -3,6 +3,7 @@ import { Row, Col, Alert } from 'antd'
 import { priorities } from '../data'
 import ProductInformation from './ProductInformation'
 import Parameters from './Parameters'
+import WinnerDisplay from './WinnerDisplay'
 import { ProductContext } from '../context/ProductContext'
 import { CurrencyContext } from '../context/CurrencyContext'
 
@@ -28,7 +29,7 @@ export default function Comparison () {
         setSelectedPriority={setSelectedPriority}
       />
 
-      {winner && <Row className='winner'><div>Winner: {winner.brand} - {winner.product}</div></Row>}
+      <WinnerDisplay winner={winner}/>
 
       <Row className='product-information-wrapper' justify='center' gutter={5}>
         {selectedProducts.length ? selectedProducts.map(food => (
