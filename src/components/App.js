@@ -5,6 +5,7 @@ import { CurrencyContext } from '../context/CurrencyContext'
 import Comparison from './Comparison'
 import ProductSelector from './ProductSelector'
 import CurrencySeletor from './CurrencySeletor'
+import Loading from './Loading'
 
 export default function App () {
   const {
@@ -14,7 +15,7 @@ export default function App () {
   } = useContext(CurrencyContext)
 
   if (!exchangeRate) {
-    return <div>loading...</div>
+    return <Loading/>
   }
 
   return (
