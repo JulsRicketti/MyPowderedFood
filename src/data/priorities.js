@@ -83,71 +83,155 @@ export const priorities = (selectedProducts = [], { selectedCurrency = 'USD', ex
   lowSugar: {
     name: 'Low Sugar',
     eval: () => {
-      return selectedProducts.reduce((lowestSugar, current) => (
-        current.macronutrients.carbohydrates.sugars < lowestSugar.macronutrients.carbohydrates.sugars
-          ? current
-          : lowestSugar
-      ))
+      return selectedProducts.reduce((lowestSugar, current) => {
+        if (
+          Array.isArray(lowestSugar)
+            ? lowestSugar[0].macronutrients.carbohydrates.sugars === current.macronutrients.carbohydrates.sugars
+            : current.macronutrients.carbohydrates.sugars === lowestSugar.macronutrients.carbohydrates.sugars
+        ) {
+          return Array.isArray(lowestSugar)
+            ? [...lowestSugar, current]
+            : [lowestSugar, current]
+        }
+        const ls = Array.isArray(lowestSugar) ? lowestSugar[0] : lowestSugar
+        return (
+          current.macronutrients.carbohydrates.sugars < ls.macronutrients.carbohydrates.sugars
+            ? current
+            : lowestSugar
+        )
+      })
     }
   },
   lowCarb: {
     name: 'Low Carbs',
     eval: () => {
-      return selectedProducts.reduce((lowestCarbs, current) => (
-        current.macronutrients.carbohydrates.total < lowestCarbs.macronutrients.carbohydrates.total
-          ? current
-          : lowestCarbs
-      ))
+      return selectedProducts.reduce((lowestCarbs, current) => {
+        if (
+          Array.isArray(lowestCarbs)
+            ? lowestCarbs[0].macronutrients.carbohydrates.total === current.macronutrients.carbohydrates.total
+            : current.macronutrients.carbohydrates.total === lowestCarbs.macronutrients.carbohydrates.total
+        ) {
+          return Array.isArray(lowestCarbs)
+            ? [...lowestCarbs, current]
+            : [lowestCarbs, current]
+        }
+        const lc = Array.isArray(lowestCarbs) ? lowestCarbs[0] : lowestCarbs
+        return (
+          current.macronutrients.carbohydrates.total < lc.macronutrients.carbohydrates.total
+            ? current
+            : lowestCarbs
+        )
+      })
     }
   },
   highFiber: {
     name: 'High Fiber',
     eval: () => {
-      return selectedProducts.reduce((highestFiber, current) => (
-        current.macronutrients.fibre > highestFiber.macronutrients.fibre
-          ? current
-          : highestFiber
-      ))
+      return selectedProducts.reduce((highestFiber, current) => {
+        if (
+          Array.isArray(highestFiber)
+            ? highestFiber[0].macronutrients.fibre === current.macronutrients.fibre
+            : current.macronutrients.fibre === highestFiber.macronutrients.fibre
+        ) {
+          return Array.isArray(highestFiber)
+            ? [...highestFiber, current]
+            : [highestFiber, current]
+        }
+        const hf = Array.isArray(highestFiber) ? highestFiber[0] : highestFiber
+        return (
+          current.macronutrients.fibre > hf.macronutrients.fibre
+            ? current
+            : highestFiber
+        )
+      })
     }
   },
   highProtein: {
     name: 'High Protein',
     eval: () => {
-      return selectedProducts.reduce((highestProtein, current) => (
-        current.macronutrients.protein > highestProtein.macronutrients.protein
-          ? current
-          : highestProtein
-      ))
+      return selectedProducts.reduce((highestProtein, current) => {
+        if (
+          Array.isArray(highestProtein)
+            ? highestProtein[0].macronutrients.protein === current.macronutrients.protein
+            : current.macronutrients.protein === highestProtein.macronutrients.protein
+        ) {
+          return Array.isArray(highestProtein)
+            ? [...highestProtein, current]
+            : [highestProtein, current]
+        }
+        const hp = Array.isArray(highestProtein) ? highestProtein[0] : highestProtein
+        return (
+          current.macronutrients.protein > hp.macronutrients.protein
+            ? current
+            : highestProtein
+        )
+      })
     }
   },
   lowSodium: {
     name: 'Low Sodium',
     eval: () => {
-      return selectedProducts.reduce((lowestSodium, current) => (
-        current.macronutrients.sodium < lowestSodium.macronutrients.sodium
-          ? current
-          : lowestSodium
-      ))
+      return selectedProducts.reduce((lowestSodium, current) => {
+        if (
+          Array.isArray(lowestSodium)
+            ? lowestSodium[0].macronutrients.sodium === current.macronutrients.sodium
+            : current.macronutrients.sodium === lowestSodium.macronutrients.sodium
+        ) {
+          return Array.isArray(lowestSodium)
+            ? [...lowestSodium, current]
+            : [lowestSodium, current]
+        }
+        const ls = Array.isArray(lowestSodium) ? lowestSodium[0] : lowestSodium
+        return (
+          current.macronutrients.sodium < ls.macronutrients.sodium
+            ? current
+            : lowestSodium
+        )
+      })
     }
   },
   lowFat: {
     name: 'Low Fat',
     eval: () => {
-      return selectedProducts.reduce((lowestFat, current) => (
-        current.macronutrients.fat.total < lowestFat.macronutrients.fat.total
-          ? current
-          : lowestFat
-      ))
+      return selectedProducts.reduce((lowestFat, current) => {
+        if (
+          Array.isArray(lowestFat)
+            ? lowestFat[0].macronutrients.fat.total === current.macronutrients.fat.total
+            : current.macronutrients.fat.total === lowestFat.macronutrients.fat.total
+        ) {
+          return Array.isArray(lowestFat)
+            ? [...lowestFat, current]
+            : [lowestFat, current]
+        }
+        const lf = Array.isArray(lowestFat) ? lowestFat[0] : lowestFat
+        return (
+          current.macronutrients.fat.total < lf.macronutrients.fat.total
+            ? current
+            : lowestFat
+        )
+      })
     }
   },
   highFat: {
     name: 'High Fat',
     eval: () => {
-      return selectedProducts.reduce((highestFat, current) => (
-        current.macronutrients.fat.total > highestFat.macronutrients.fat.total
-          ? current
-          : highestFat
-      ))
+      return selectedProducts.reduce((highestFat, current) => {
+        if (
+          Array.isArray(highestFat)
+            ? highestFat[0].macronutrients.fat.total === current.macronutrients.fat.total
+            : current.macronutrients.fat.total === highestFat.macronutrients.fat.total
+        ) {
+          return Array.isArray(highestFat)
+            ? [...highestFat, current]
+            : [highestFat, current]
+        }
+        const hf = Array.isArray(highestFat) ? highestFat[0] : highestFat
+        return (
+          current.macronutrients.fat.total > hf.macronutrients.fat.total
+            ? current
+            : highestFat
+        )
+      })
     }
   },
   multiVitaminsAndMinerals: {
@@ -181,11 +265,25 @@ export const priorities = (selectedProducts = [], { selectedCurrency = 'USD', ex
   mostAccomodatedRestrictions: {
     name: 'Most Accomodated Restrictions',
     eval: () => {
-      return selectedProducts.reduce((mostAccomodatedRestrictions, current) => (
-        current.accomodatedRestrictions.length > mostAccomodatedRestrictions.accomodatedRestrictions.length
-          ? current
-          : mostAccomodatedRestrictions
-      ))
+      return selectedProducts.reduce((mostAccomodatedRestrictions, current) => {
+        if (
+          Array.isArray(mostAccomodatedRestrictions)
+            ? mostAccomodatedRestrictions[0].accomodatedRestrictions.length === current.accomodatedRestrictions.length
+            : current.accomodatedRestrictions.length === mostAccomodatedRestrictions.accomodatedRestrictions.length
+        ) {
+          return Array.isArray(mostAccomodatedRestrictions)
+            ? [...mostAccomodatedRestrictions, current]
+            : [mostAccomodatedRestrictions, current]
+        }
+
+        const mar = Array.isArray(mostAccomodatedRestrictions) ? mostAccomodatedRestrictions[0] : mostAccomodatedRestrictions
+
+        return (
+          current.accomodatedRestrictions.length > mar.accomodatedRestrictions.length
+            ? current
+            : mostAccomodatedRestrictions
+        )
+      })
     }
   }
 })
