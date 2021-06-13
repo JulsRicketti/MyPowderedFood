@@ -14,6 +14,7 @@ export default function App () {
     setSelectedCurrency
   } = useContext(CurrencyContext)
 
+  console.warn('whats up??', exchangeRate)
   if (!exchangeRate) {
     return <Loading/>
   }

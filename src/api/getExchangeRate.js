@@ -1,6 +1,7 @@
 import axios from 'axios'
+import config from '../config'
+
 export default async function getExchangeRate (base = 'USD') {
-  // Source: https://exchangeratesapi.io/
-  const data = (await axios.get(`https://api.exchangeratesapi.io/latest?base=${base}`)).data
-  return data.rates
+  const data = (await axios.get(`${config.REACT_APP_EXCHANGE_RATE_BASE_URL}exchangerate?base=${base}`)).data
+  return data.conversion_rates
 }
