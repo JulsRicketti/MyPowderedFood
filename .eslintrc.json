@@ -168,7 +168,8 @@
     "no-path-concat": "off",
     "no-process-exit": "off",
     "no-restricted-modules": "off",
-    "no-sync": "off"
+    "no-sync": "off",
+    "comma-dangle": "off"
   },
   "settings": {
     "react": {
