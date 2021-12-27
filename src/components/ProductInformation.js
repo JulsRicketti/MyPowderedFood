@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import PropTypes from 'prop-types'
-import { Card, Divider, Tooltip } from 'antd'
+import { Card, Divider, Tooltip, Collapse } from 'antd'
 import { CheckCircleOutlined, CloseCircleOutlined, InfoCircleOutlined } from '@ant-design/icons'
 import { CurrencyContext } from '../context/CurrencyContext'
 import { dietaryRestrictions } from '../data'
@@ -59,52 +59,53 @@ export default function ProductInformation ({ food = {}, vitaminsAndMineralsUnit
         <p><strong>Website:</strong> <a href={food.site} target='_blank' rel="noopener noreferrer">{food.site}</a></p>
       </Card>
       {accomadatedRestrictionsComponent}
-      <Card style={sharedStyle}>
-        <h3>Macronutrients</h3>
+      <Collapse>
+        <Collapse.Panel header='Macronutrients' className={isWinner ? 'winner-collapsible' : ''}>
+          <div>
+            <h4>Fats</h4>
+            <p><strong>Total:</strong> {macronutrients.fat.total}g</p>
+            <p><strong>Saturated:</strong> {macronutrients.fat.saturated}g</p>
+          </div>
+          <Divider/>
 
-        <div>
-          <h4>Fats</h4>
-          <p><strong>Total:</strong> {macronutrients.fat.total}g</p>
-          <p><strong>Saturated:</strong> {macronutrients.fat.saturated}g</p>
-        </div>
-        <Divider/>
+          <div>
+            <h4>Carbohydrates</h4>
+            <p><strong>Total:</strong> {macronutrients.carbohydrates.total}g</p>
+            <p><strong>Sugars:</strong> {macronutrients.carbohydrates.sugars}g</p>
+          </div>
 
-        <div>
-          <h4>Carbohydrates</h4>
-          <p><strong>Total:</strong> {macronutrients.carbohydrates.total}g</p>
-          <p><strong>Sugars:</strong> {macronutrients.carbohydrates.sugars}g</p>
-        </div>
+          <Divider/>
+          <div>
+            <h4>Protein: {macronutrients.protein}g</h4>
+          </div>
 
-        <Divider/>
-        <div>
-          <h4>Protein: {macronutrients.protein}g</h4>
-        </div>
+          <Divider/>
+          <div>
+            <h4>Fibre: {macronutrients.fibre}g</h4>
+          </div>
+          <Divider/>
 
-        <Divider/>
-        <div>
-          <h4>Fibre: {macronutrients.fibre}g</h4>
-        </div>
-        <Divider/>
-
-        <div>
-          <h4>Sodium: {macronutrients.sodium}g</h4>
-        </div>
-      </Card>
-      <Card style={sharedStyle}>
-        <h3>Vitamins and Minerals</h3>
-        {vitaminsAndMineralsArray.map((key, index) => {
-          const { name, unit, quantity, dailyPercentage } = vitaminsAndMinerals[key]
-          const isLastIndex = index === (vitaminsAndMineralsArray.length - 1)
-          const convertedQuantity = convertToProperUnit(vitaminsAndMineralsUnit, unit, quantity)
-          return (
-            <div key={key}>
-              <h4>{name}:</h4>
-              <div><strong>{convertedQuantity} {vitaminsAndMineralsUnit} ({dailyPercentage}%)</strong></div>
-              {isLastIndex ? null : <Divider/>}
-            </div>
-          )
-        })}
-      </Card>
+          <div>
+            <h4>Sodium: {macronutrients.sodium}g</h4>
+          </div>
+        </Collapse.Panel>
+      </Collapse>
+      <Collapse>
+        <Collapse.Panel header='Vitamins and Minerals' className={isWinner ? 'winner-collapsible' : ''}>
+          {vitaminsAndMineralsArray.map((key, index) => {
+            const { name, unit, quantity, dailyPercentage } = vitaminsAndMinerals[key]
+            const isLastIndex = index === (vitaminsAndMineralsArray.length - 1)
+            const convertedQuantity = convertToProperUnit(vitaminsAndMineralsUnit, unit, quantity)
+            return (
+              <div key={key}>
+                <h4>{name}:</h4>
+                <div><strong>{convertedQuantity} {vitaminsAndMineralsUnit} ({dailyPercentage}%)</strong></div>
+                {isLastIndex ? null : <Divider/>}
+              </div>
+            )
+          })}
+        </Collapse.Panel>
+      </Collapse>
     </>
   )
 }
