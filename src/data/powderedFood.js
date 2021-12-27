@@ -204,7 +204,7 @@ export const powderedFood = [
     calories: 400,
     priceAndServings: {
       fullPrice: {
-        CAD: 93.34
+        CAD: 99.98
       },
       primaryCurrency: 'CAD',
       servings: 30
@@ -1381,6 +1381,7 @@ export const powderedFood = [
     brand: 'Super Body Fuel',
     product: 'Milk Fuel (any flavour)',
     site: 'https://superbodyfuel.com/',
+    note: 'This includes the addition of milk as recommended by the company',
     calories: 500,
     priceAndServings: {
       fullPrice: {
@@ -1577,6 +1578,7 @@ export const powderedFood = [
     brand: 'Super Body Fuel',
     product: 'Keto Fuel (any flavour)',
     site: 'https://superbodyfuel.com/',
+    note: 'This includes the addition of olive oil as recommended by the company',
     calories: 450,
     priceAndServings: {
       fullPrice: {
@@ -1773,6 +1775,7 @@ export const powderedFood = [
     brand: 'Super Body Fuel',
     product: 'Athlete Fuel (any flavour)',
     site: 'https://superbodyfuel.com/',
+    note: 'This includes the addition of milk as recommended by the company',
     calories: 650,
     priceAndServings: {
       fullPrice: {
@@ -1969,6 +1972,7 @@ export const powderedFood = [
     brand: 'Super Body Fuel',
     product: 'Super Fuel (any flavour)',
     site: 'https://superbodyfuel.com/',
+    note: 'This includes the addition of olive oil as recommended by the company',
     calories: 500,
     priceAndServings: {
       fullPrice: {

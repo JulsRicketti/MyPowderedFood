@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import PropTypes from 'prop-types'
-import { Card, Divider } from 'antd'
-import { CheckCircleOutlined, CloseCircleOutlined } from '@ant-design/icons'
+import { Card, Divider, Tooltip } from 'antd'
+import { CheckCircleOutlined, CloseCircleOutlined, InfoCircleOutlined } from '@ant-design/icons'
 import { CurrencyContext } from '../context/CurrencyContext'
 import { dietaryRestrictions } from '../data'
 import { alphabeticalSort, convertToProperUnit } from '../util'
@@ -39,9 +39,17 @@ export default function ProductInformation ({ food = {}, vitaminsAndMineralsUnit
 
   const convertedPrice = convertToChosenCurrency(selectedCurrency, exchangeRate, priceAndServings)
 
+  const title = (
+    <span>{food.brand} - {food.product} {food.note && (
+      <Tooltip title={food.note}>
+        <InfoCircleOutlined />
+      </Tooltip>
+    )}</span>
+  )
+
   return (
     <>
-      <Card type='inner' title={`${food.brand} - ${food.product}`} style={sharedStyle}>
+      <Card type='inner' title={title} style={sharedStyle}>
         <p><strong>Calories per serving: {food.calories}</strong></p>
         <p><strong>Full Price:</strong> {selectedCurrency} {convertedPrice}</p>
         <p><strong>Servings:</strong> {priceAndServings.servings}</p>
