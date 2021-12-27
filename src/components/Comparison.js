@@ -51,7 +51,7 @@ export default function Comparison () {
               style={{ width: '100%', marginTop: 10 }}
               message={
                 <p>
-                  Information last updated on February 15th, 2021. If information is innacurate please <a href="https://www.reddit.com/message/compose/?to=monkeyMammoth4" target='_blank' rel="noopener noreferrer">contact me</a>.
+                  Information last updated on December 27th, 2021. If information is innacurate please <a href="https://www.reddit.com/message/compose/?to=monkeyMammoth4" target='_blank' rel="noopener noreferrer">contact me</a>.
                 </p>
               }
               type='info'
