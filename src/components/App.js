@@ -5,6 +5,7 @@ import { CurrencyContext } from '../context/CurrencyContext'
 import Comparison from './Comparison'
 import ProductSelector from './ProductSelector'
 import CurrencySeletor from './CurrencySeletor'
+import FoodEditorModal from './FoodEditorModal'
 import Loading from './Loading'
 
 export default function App () {
@@ -14,7 +15,6 @@ export default function App () {
     setSelectedCurrency
   } = useContext(CurrencyContext)
 
-  console.warn('whats up??', exchangeRate)
   if (!exchangeRate) {
     return <Loading/>
   }
@@ -25,6 +25,7 @@ export default function App () {
       <ProductSelector/>
       <CurrencySeletor selectedCurrency={selectedCurrency} setSelectedCurrency={setSelectedCurrency}/>
       <Comparison/>
+      <FoodEditorModal visible={true}/>
     </div>
   )
 }
