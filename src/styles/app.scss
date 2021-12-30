@@ -122,3 +122,17 @@ Results content
 		background-color: #75bad46e;
 	}
 }
+
+/**************************************************
+Forms
+**************************************************/
+.form-item {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+
+	.ant-form-item-control {
+		width: 100%;
+	}
+}

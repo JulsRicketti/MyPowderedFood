@@ -16,12 +16,11 @@ export default function ProductSection () {
 
   const foodByBrand = brand ? powderedFood.find(f => f.brand === brand) : ''
   const productWebsite = foodByBrand && foodByBrand.site
-  console.warn(foodByBrand)
   return (
     <div>
       <h3>Section 1- Product</h3>
       <Form>
-        <Form.Item label='Brand'>
+        <Form.Item label='Brand' className='form-item'>
           <Select
             showSearch
             value={brand}
@@ -48,41 +47,44 @@ export default function ProductSection () {
             {brands.map(b => <Select.Option key={b} value={b}>{b}</Select.Option>)}
           </Select>
         </Form.Item>
-        <Form.Item label='Product name'>
+        <Form.Item label='Product name' className='form-item'>
           <Input
             value={productName}
             onChange={(evt) => setProductName(evt.target.value)}
           />
         </Form.Item>
-        <Form.Item label='Website'>
+        <Form.Item label='Website' className='form-item'>
           <Input
-            disabled={!!productWebsite}
             value={productWebsite || website}
             onChange={(evt) => setWebsite(evt.target.value)}
           />
         </Form.Item>
-        <Form.Item label='Note'>
+        <Form.Item label='Note' className='form-item'>
           <Input.TextArea
             value={note}
             onChange={(evt) => setNote(evt.target.value)}
           />
         </Form.Item>
-        <Form.Item label='Calories per serving'>
+        <Form.Item label='Calories per serving' className='form-item'>
           <Input
             type='number'
             value={calories}
             onChange={(evt) => setCalories(evt.target.value)}
           />
         </Form.Item>
-        <Form.Item label='Full Price'>
+        <Form.Item label='Full Price' className='form-item'>
           <Input
             type='number'
             value={price}
             onChange={(evt) => setPrice(evt.target.value)}
           />
-          <Select/>
+          <Select
+            showSearch
+            value={currency}
+            onChange={(selectedCurrency) => setCurrency(selectedCurrency)}
+          />
         </Form.Item>
-        <Form.Item label='Servings'>
+        <Form.Item label='Servings' className='form-item'>
           <Input
             type='number'
             value={servings}
@@ -90,7 +92,6 @@ export default function ProductSection () {
           />
         </Form.Item>
       </Form>
-
     </div>
   )
 }
