@@ -72,7 +72,7 @@ export default function ProductSection () {
             onChange={(evt) => setCalories(evt.target.value)}
           />
         </Form.Item>
-        <Form.Item label='Full Price' className='form-item'>
+        <Form.Item label='Full Price' className='form-item input-with-select-form-item'>
           <Input
             type='number'
             value={price}

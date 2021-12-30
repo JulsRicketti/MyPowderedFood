@@ -136,3 +136,15 @@ Forms
 		width: 100%;
 	}
 }
+
+.input-with-select-form-item {
+	.ant-form-item-control-input-content {
+		display: flex;
+		.ant-input {
+			width: 70%;
+		}
+		.ant-select {
+			width: 30%;
+		}
+	}
+}
