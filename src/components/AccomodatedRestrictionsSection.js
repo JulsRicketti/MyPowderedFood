@@ -1,11 +1,14 @@
-import React, { useState } from 'react'
+import React from 'react'
+import PropTypes from 'prop-types'
 import { Form, Select } from 'antd'
 import { dietaryRestrictions } from '../data'
 import { alphabeticalSort } from '../util'
 
-export default function AccomodatedRestrictionsSection () {
+export default function AccomodatedRestrictionsSection ({
+  accomodatedRestrictions, setAccomodatedRestrictions
+}) {
   const dietaryRestrictionsArray = Object.keys(dietaryRestrictions)
-  const [accomodatedRestrictions, setAccomodatedRestrictions] = useState([])
+
   return (
     <div>
       <h3>Section 4- Accomodated Restrictions Sections</h3>
@@ -38,4 +41,9 @@ export default function AccomodatedRestrictionsSection () {
       </Form>
     </div>
   )
+}
+
+AccomodatedRestrictionsSection.propTypes = {
+  accomodatedRestrictions: PropTypes.arrayOf(PropTypes.string),
+  setAccomodatedRestrictions: PropTypes.func.isRequired
 }

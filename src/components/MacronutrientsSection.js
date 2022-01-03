@@ -1,12 +1,19 @@
-import React, { useState } from 'react'
+import React from 'react'
+import PropTypes from 'prop-types'
 import { Form, Input, Divider } from 'antd'
 
-export default function MacronutrientsSection () {
-  const [fats, setFats] = useState({})
-  const [carbohydrates, setCarbohydrates] = useState({})
-  const [protein, setProtein] = useState('')
-  const [fibre, setFibre] = useState('')
-  const [sodium, setSodium] = useState('')
+export default function MacronutrientsSection ({
+  fats, setFats,
+  carbohydrates, setCarbohydrates,
+  protein, setProtein,
+  fibre, setFibre,
+  sodium, setSodium
+}) {
+  // const [fats, setFats] = useState({})
+  // const [carbohydrates, setCarbohydrates] = useState({})
+  // const [protein, setProtein] = useState('')
+  // const [fibre, setFibre] = useState('')
+  // const [sodium, setSodium] = useState('')
 
   return (
     <div>
@@ -78,4 +85,25 @@ export default function MacronutrientsSection () {
       </Form>
     </div>
   )
+}
+
+MacronutrientsSection.propTypes = {
+  fats: PropTypes.shape({
+    total: PropTypes.number,
+    saturated: PropTypes.number,
+    trans: PropTypes.number,
+    polysaturated: PropTypes.number,
+  }),
+  setFats: PropTypes.func.isRequired,
+  carbohydrates: PropTypes.shape({
+    total: PropTypes.number,
+    sugars: PropTypes.number,
+  }),
+  setCarbohydrates: PropTypes.func.isRequired,
+  protein: PropTypes.number,
+  setProtein: PropTypes.func.isRequired,
+  fibre: PropTypes.number,
+  setFibre: PropTypes.func.isRequired,
+  sodium: PropTypes.number,
+  setSodium: PropTypes.number,
 }

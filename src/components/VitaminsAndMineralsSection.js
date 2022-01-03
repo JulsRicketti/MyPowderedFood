@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React from 'react'
+import PropTypes from 'prop-types'
 import { Form } from 'antd'
 import InputWithSelect from './InputWithSelect'
 
@@ -153,8 +154,7 @@ const unitOptions = [
   },
 ]
 
-export default function VitaminsAndMineralsSection () {
-  const [vitaminsAndMinerals, setVitaminsAndMinerals] = useState({})
+export default function VitaminsAndMineralsSection ({ vitaminsAndMinerals, setVitaminsAndMinerals }) {
   return (
     <div>
       <h3>Section 3- Vitamins and Minerals</h3>
@@ -191,4 +191,9 @@ export default function VitaminsAndMineralsSection () {
       </Form>
     </div>
   )
+}
+
+VitaminsAndMineralsSection.propTypes = {
+  vitaminsAndMinerals: PropTypes.any,
+  setVitaminsAndMinerals: PropTypes.func.isRequired
 }

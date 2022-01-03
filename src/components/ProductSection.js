@@ -1,23 +1,29 @@
-import React, { useState, useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
+import PropTypes from 'prop-types'
 import { ProductContext } from '../context/ProductContext'
 import { Form, Input, Select, Divider } from 'antd'
 import InputWithSelect from './InputWithSelect'
 import { currencies } from '../data'
 
-export default function ProductSection () {
+export default function ProductSection ({
+  brand, setBrand,
+  productName, setProductName,
+  website, setWebsite,
+  note, setNote,
+  calories, setCalories,
+  price, setPrice,
+  currency, setCurrency,
+  servings, setServings,
+}) {
   const { powderedFood, brands } = useContext(ProductContext)
-
-  const [brand, setBrand] = useState('')
-  const [productName, setProductName] = useState('')
-  const [website, setWebsite] = useState('')
-  const [note, setNote] = useState('')
-  const [calories, setCalories] = useState(0)
-  const [price, setPrice] = useState(0)
-  const [currency, setCurrency] = useState('')
-  const [servings, setServings] = useState('')
 
   const foodByBrand = brand ? powderedFood.find(f => f.brand === brand) : ''
   const productWebsite = foodByBrand && foodByBrand.site
+
+  useEffect(() => {
+    setWebsite(productWebsite)
+  }, [productWebsite])
+
   return (
     <div>
       <h3>Section 1- Product</h3>
@@ -94,4 +100,23 @@ export default function ProductSection () {
       </Form>
     </div>
   )
+}
+
+ProductSection.propTypes = {
+  brand: PropTypes.string,
+  setBrand: PropTypes.func,
+  productName: PropTypes.string,
+  setProductName: PropTypes.func,
+  website: PropTypes.string,
+  setWebsite: PropTypes.func,
+  note: PropTypes.string,
+  setNote: PropTypes.func,
+  calories: PropTypes.number,
+  setCalories: PropTypes.func,
+  price: PropTypes.number,
+  setPrice: PropTypes.func,
+  currency: PropTypes.string,
+  setCurrency: PropTypes.func,
+  servings: PropTypes.number,
+  setServings: PropTypes.func,
 }
