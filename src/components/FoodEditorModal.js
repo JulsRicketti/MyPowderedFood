@@ -10,7 +10,7 @@ const sections = ['product', 'macronutrients', 'vitaminsAndMinerals']
 
 export default function FoodEditorModal ({ visible }) {
   // 0- product, 1- macronutrients, 2- vitaminsAndMinerals, 3- accomadated restrictions
-  const [section, setSection] = useState(2)
+  const [section, setSection] = useState(0)
   const buttons = (
     <div style={{ margin: '10px 0px', display: 'flex', justifyContent: 'space-between' }}>
       <Button

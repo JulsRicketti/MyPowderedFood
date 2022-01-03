@@ -168,7 +168,7 @@ export default function VitaminsAndMineralsSection () {
               key={key}
               label={label}
               inputType='number'
-              inputValue={currentObj.quantity}
+              inputValue={currentObj.quantity || ''}
               inputOnChange={(evt) => setVitaminsAndMinerals({
                 ...vitaminsAndMinerals,
                 [key]: {

@@ -10,7 +10,7 @@ export default function InputWithSelect ({
   selectValue,
   selectOnChange,
   selectOptions,
-  showSelectSearch = false,
+  selectShowSearch = false,
   formItemClasses = 'form-item input-with-select-form-item'
 }) {
   return (
@@ -21,12 +21,14 @@ export default function InputWithSelect ({
         onChange={inputOnChange}
       />
       <Select
-        showSearch={showSelectSearch}
+        showSearch={selectShowSearch}
         value={selectValue}
         onChange={selectOnChange}
       >
         {selectOptions.map(option => (
-          <Select.Option key={option.value} value={option.value}>{option.label || option.value}</Select.Option>
+          typeof option !== 'object'
+            ? <Select.Option key={option} value={option.value}>{option}</Select.Option>
+            : <Select.Option key={option.value} value={option.value}>{option.label || option.value}</Select.Option>
         ))}
       </Select>
     </Form.Item>
@@ -37,14 +39,20 @@ export default function InputWithSelect ({
 InputWithSelect.propTypes = {
   label: PropTypes.string.isRequired,
   inputType: PropTypes.string,
-  inputValue: PropTypes.oneOf(PropTypes.string, PropTypes.number).isRequired,
+  inputValue: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
   inputOnChange: PropTypes.func.isRequired,
   selectValue: PropTypes.string.isRequired,
   selectOnChange: PropTypes.func.isRequired,
-  selectOptions: PropTypes.arrayOf(PropTypes.shape({
-    value: PropTypes.string.isRequired,
-    label: PropTypes.string,
-  })),
-  showSelectSearch: PropTypes.bool,
+  selectOptions: PropTypes.arrayOf(
+    PropTypes.oneOfType([
+      PropTypes.shape({
+        value: PropTypes.string.isRequired,
+        label: PropTypes.string,
+      }),
+      PropTypes.string,
+      PropTypes.number,
+    ]),
+  ),
+  selectShowSearch: PropTypes.bool,
   formItemClasses: PropTypes.string
 }

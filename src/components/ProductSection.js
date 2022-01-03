@@ -1,6 +1,8 @@
 import React, { useState, useContext } from 'react'
 import { ProductContext } from '../context/ProductContext'
 import { Form, Input, Select, Divider } from 'antd'
+import InputWithSelect from './InputWithSelect'
+import { currencies } from '../data'
 
 export default function ProductSection () {
   const { powderedFood, brands } = useContext(ProductContext)
@@ -72,18 +74,16 @@ export default function ProductSection () {
             onChange={(evt) => setCalories(evt.target.value)}
           />
         </Form.Item>
-        <Form.Item label='Full Price' className='form-item input-with-select-form-item'>
-          <Input
-            type='number'
-            value={price}
-            onChange={(evt) => setPrice(evt.target.value)}
-          />
-          <Select
-            showSearch
-            value={currency}
-            onChange={(selectedCurrency) => setCurrency(selectedCurrency)}
-          />
-        </Form.Item>
+        <InputWithSelect
+          label='Full Price'
+          inputType='number'
+          inputValue={price || ''}
+          inputOnChange={(evt) => setPrice(evt.target.value)}
+          selectValue={currency}
+          selectOnChange={(selectedCurrency) => setCurrency(selectedCurrency)}
+          selectShowSearch={true}
+          selectOptions={currencies}
+        />
         <Form.Item label='Servings' className='form-item'>
           <Input
             type='number'

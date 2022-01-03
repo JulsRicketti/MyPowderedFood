@@ -39,8 +39,8 @@ export default function ProductSelector () {
       >
         {brandList.map((brand, index) => {
           return (
-            <>
-              <Select.Option key={`brand-${index}`} disabled={true}>
+            <React.Fragment key={`brand-${index}`}>
+              <Select.Option disabled={true}>
                 {brand}
               </Select.Option>
               {options
@@ -56,7 +56,7 @@ export default function ProductSelector () {
                     </Select.Option>
                   )
                 })}
-            </>
+            </React.Fragment>
           )
         })}
       </Select>
