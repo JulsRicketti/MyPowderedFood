@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Form, Input, Select } from 'antd'
+import { Form } from 'antd'
 import InputWithSelect from './InputWithSelect'
 
 const vitaminsAndMineralsList = [

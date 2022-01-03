@@ -5,8 +5,7 @@ import { ArrowLeftOutlined, ArrowRightOutlined } from '@ant-design/icons'
 import ProductSection from './ProductSection'
 import MacronutrientsSection from './MacronutrientsSection'
 import VitaminsAndMineralsSection from './VitaminsAndMineralsSection'
-
-const sections = ['product', 'macronutrients', 'vitaminsAndMinerals']
+import AccomodatedRestrictionsSection from './AccomodatedRestrictionsSection'
 
 export default function FoodEditorModal ({ visible }) {
   // 0- product, 1- macronutrients, 2- vitaminsAndMinerals, 3- accomadated restrictions
@@ -19,7 +18,7 @@ export default function FoodEditorModal ({ visible }) {
         icon={<ArrowLeftOutlined />}
       />
       <Button
-        disabled={section === sections.length - 1}
+        disabled={section === 3}
         onClick={() => setSection(section + 1)}
         icon={<ArrowRightOutlined />}
       />
@@ -30,6 +29,7 @@ export default function FoodEditorModal ({ visible }) {
       {section === 0 && <ProductSection/>}
       {section === 1 && <MacronutrientsSection/>}
       {section === 2 && <VitaminsAndMineralsSection/>}
+      {section === 3 && <AccomodatedRestrictionsSection/>}
       {buttons}
     </Modal>
   )
