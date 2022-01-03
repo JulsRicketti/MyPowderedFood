@@ -1,5 +1,7 @@
 import 'antd/dist/antd.css'
-import React, { useContext } from 'react'
+import React, { useState, useContext } from 'react'
+import { Button } from 'antd'
+import { PlusOutlined } from '@ant-design/icons'
 
 import { CurrencyContext } from '../context/CurrencyContext'
 import Comparison from './Comparison'
@@ -15,6 +17,8 @@ export default function App () {
     setSelectedCurrency
   } = useContext(CurrencyContext)
 
+  const [foodEditorModalOpen, setFoodEditorModalOpen] = useState(false)
+
   if (!exchangeRate) {
     return <Loading/>
   }
@@ -25,7 +29,14 @@ export default function App () {
       <ProductSelector/>
       <CurrencySeletor selectedCurrency={selectedCurrency} setSelectedCurrency={setSelectedCurrency}/>
       <Comparison/>
-      <FoodEditorModal visible={true}/>
+      <FoodEditorModal visible={foodEditorModalOpen} onClose={() => setFoodEditorModalOpen(false)}/>
+
+      <Button
+        type='primary'
+        className='add-food-button'
+        icon={<PlusOutlined />}
+        onClick={() => setFoodEditorModalOpen(true)}
+      />
     </div>
   )
 }

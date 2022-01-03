@@ -38,6 +38,21 @@ Loading
 	align-items: center;
 }
 /**************************************************
+Floating Add Button
+**************************************************/
+.add-food-button {
+	position: fixed;
+	bottom: 5%;
+	right: 5%;
+	width: 60px;
+	height: 60px;
+	border-radius: 100%;
+	span {
+		font-size: 20px;
+	}
+}
+
+/**************************************************
 Currency Selector
 **************************************************/
 .currency-selector {
@@ -132,6 +147,12 @@ Forms
 		height: 600px;
 		overflow-y: scroll;
 	}
+}
+
+.modal-nav-btns {
+	margin: 10px 0px;
+	display: flex;
+	justify-content: space-between;
 }
 
 .form-item {

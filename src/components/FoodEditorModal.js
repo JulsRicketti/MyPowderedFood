@@ -7,11 +7,11 @@ import MacronutrientsSection from './MacronutrientsSection'
 import VitaminsAndMineralsSection from './VitaminsAndMineralsSection'
 import AccomodatedRestrictionsSection from './AccomodatedRestrictionsSection'
 
-export default function FoodEditorModal ({ visible }) {
+export default function FoodEditorModal ({ visible, onClose }) {
   // 0- product, 1- macronutrients, 2- vitaminsAndMinerals, 3- accomadated restrictions
   const [section, setSection] = useState(0)
   const buttons = (
-    <div style={{ margin: '10px 0px', display: 'flex', justifyContent: 'space-between' }}>
+    <div className='modal-nav-btns'>
       <Button
         disabled={!section}
         onClick={() => setSection(section - 1)}
@@ -25,7 +25,7 @@ export default function FoodEditorModal ({ visible }) {
     </div>
   )
   return (
-    <Modal title="Add food" visible={true} className='add-food-modal'>
+    <Modal title="Add food" visible={visible} className='add-food-modal' onCancel={onClose}>
       {section === 0 && <ProductSection/>}
       {section === 1 && <MacronutrientsSection/>}
       {section === 2 && <VitaminsAndMineralsSection/>}
@@ -37,4 +37,5 @@ export default function FoodEditorModal ({ visible }) {
 
 FoodEditorModal.propTypes = {
   visible: PropTypes.bool.isRequired,
+  onClose: PropTypes.func.isRequired,
 }
