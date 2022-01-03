@@ -126,6 +126,14 @@ Results content
 /**************************************************
 Forms
 **************************************************/
+// TODO: fix it for mobile
+.add-food-modal {
+	.ant-form {
+		max-height: 600px;
+		overflow-y: scroll;
+	}
+}
+
 .form-item {
 	display: flex;
 	flex-direction: column;

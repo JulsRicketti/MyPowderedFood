@@ -3,14 +3,15 @@ import PropTypes from 'prop-types'
 import { Modal, Button } from 'antd'
 import { ArrowLeftOutlined, ArrowRightOutlined } from '@ant-design/icons'
 import ProductSection from './ProductSection'
+import MacronutrientsSection from './MacronutrientsSection'
 
 const sections = ['product', 'macronutrients', 'vitaminsAndMinerals']
 
 export default function FoodEditorModal ({ visible }) {
-  // 1- product, 2- macronutrients, 3- vitaminsAndMinerals
-  const [section, setSection] = useState(0)
+  // 0- product, 1- macronutrients, 2- vitaminsAndMinerals, 3- accomadated restrictions
+  const [section, setSection] = useState(1)
   const buttons = (
-    <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+    <div style={{ margin: 10, display: 'flex', justifyContent: 'space-between' }}>
       <Button
         disabled={!section}
         onClick={() => setSection(section - 1)}
@@ -24,8 +25,9 @@ export default function FoodEditorModal ({ visible }) {
     </div>
   )
   return (
-    <Modal title="Add food" visible={true}>
-      <ProductSection/>
+    <Modal title="Add food" visible={true} className='add-food-modal'>
+      {section === 0 && <ProductSection/>}
+      {section === 1 && <MacronutrientsSection/>}
       {buttons}
     </Modal>
   )
