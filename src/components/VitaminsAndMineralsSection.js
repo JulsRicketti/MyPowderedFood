@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Form, Input, Select } from 'antd'
+import InputWithSelect from './InputWithSelect'
 
 const vitaminsAndMineralsList = [
   {
@@ -141,6 +142,17 @@ const vitaminsAndMineralsList = [
   },
 ]
 
+const unitOptions = [
+  {
+    value: 'mg',
+    label: 'mg',
+  },
+  {
+    value: 'μg',
+    label: 'μg (or mcg)',
+  },
+]
+
 export default function VitaminsAndMineralsSection () {
   const [vitaminsAndMinerals, setVitaminsAndMinerals] = useState({})
   return (
@@ -152,33 +164,28 @@ export default function VitaminsAndMineralsSection () {
           const currentObj = vitaminsAndMinerals[key] || {}
           const label = `${name}${alternativeName ? ` (${alternativeName})` : ''}`
           return (
-            <Form.Item key={key} label={label} className='form-item input-with-select-form-item'>
-              <Input
-                type="number"
-                value={currentObj.quantity}
-                onChange={(evt) => setVitaminsAndMinerals({
-                  ...vitaminsAndMinerals,
-                  [key]: {
-                    ...currentObj,
-                    quantity: evt.target.value
-                  }
-                })}
-              />
-              <Select
-                showSearch
-                value={currentObj.unit || defaultUnit}
-                onChange={(unit) => setVitaminsAndMinerals({
-                  ...vitaminsAndMinerals,
-                  [key]: {
-                    ...currentObj,
-                    unit
-                  }
-                })}
-              >
-                <Select.Option value='mg'>mg</Select.Option>
-                <Select.Option value='μg'>μg (or mcg)</Select.Option>
-              </Select>
-            </Form.Item>
+            <InputWithSelect
+              key={key}
+              label={label}
+              inputType='number'
+              inputValue={currentObj.quantity}
+              inputOnChange={(evt) => setVitaminsAndMinerals({
+                ...vitaminsAndMinerals,
+                [key]: {
+                  ...currentObj,
+                  quantity: evt.target.value
+                }
+              })}
+              selectValue={currentObj.unit || defaultUnit}
+              selectOnChange={(unit) => setVitaminsAndMinerals({
+                ...vitaminsAndMinerals,
+                [key]: {
+                  ...currentObj,
+                  unit
+                }
+              })}
+              selectOptions={unitOptions}
+            />
           )
         })}
       </Form>
