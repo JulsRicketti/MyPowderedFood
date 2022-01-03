@@ -31,12 +31,14 @@ export default function App () {
       <Comparison/>
       <FoodEditorModal visible={foodEditorModalOpen} onClose={() => setFoodEditorModalOpen(false)}/>
 
-      <Button
-        type='primary'
-        className='add-food-button'
-        icon={<PlusOutlined />}
-        onClick={() => setFoodEditorModalOpen(true)}
-      />
+      {process.env.NODE_ENV === 'development' && (
+        <Button
+          type='primary'
+          className='add-food-button'
+          icon={<PlusOutlined />}
+          onClick={() => setFoodEditorModalOpen(true)}
+        />
+      )}
     </div>
   )
 }

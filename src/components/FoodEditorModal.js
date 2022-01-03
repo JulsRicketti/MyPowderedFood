@@ -65,12 +65,6 @@ export default function FoodEditorModal ({ visible, onClose }) {
     Object.keys(vitaminsAndMinerals).length
   )
 
-  console.table({
-    brand,
-    productName,
-    website
-  })
-
   const onOk = () => {
     const data = {
       brand,
