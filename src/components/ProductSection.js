@@ -22,7 +22,7 @@ export default function ProductSection ({
 
   useEffect(() => {
     setWebsite(productWebsite)
-  }, [productWebsite])
+  }, [productWebsite, setWebsite])
 
   return (
     <div>
